@@ -5,10 +5,19 @@ import java.io.InputStreamReader;
 
 
 public class JavaPythonIntegration {
+    private static MiClase convertToMiClase(String miClaseString) {
+        miClaseString = miClaseString.replace("[", "");
+        miClaseString = miClaseString.replace("]", "");
+        String[] miClaseArray = miClaseString.split(",");
+        MiClase miClase = new MiClase();
+        miClase.setNombre(miClaseArray[2].trim());
+        miClase.setEdad(Integer.parseInt(miClaseArray[3].trim()));
+        return miClase;
+    }
     public static void main(String[] args) {
         try {
-            String functionName = "otra_funcion";
-            String[] params = {"parametro1", "parametro2"};  // Parámetros para la función en Python
+            String functionName = "cumpleagnos";
+            String[] params = {"prueba", "21"}; // Parámetros para la función en Python
 
             // Construye el comando para llamar a la función en Python
             String command = "python main.py " + functionName;
@@ -24,8 +33,8 @@ public class JavaPythonIntegration {
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
             String output = reader.readLine();
 
-            // Imprime el resultado
-            System.out.println(output);
+            MiClase mc = convertToMiClase(output); // Convierte el String a MiClase
+            System.out.println(mc.toString());
 
             // Cierra el lector y el proceso
             reader.close();
@@ -34,4 +43,6 @@ public class JavaPythonIntegration {
             e.printStackTrace();
         }
     }
+
+    
 }
