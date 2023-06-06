@@ -1,5 +1,7 @@
+import sys
+
 def saludar():
-    print('Hola mundo')
+    print('Hola mundo '+str(sys.argv))
 
 def main():
     saludar()

@@ -7,8 +7,9 @@ import java.io.InputStreamReader;
 public class JavaPythonIntegration {
     public static void main(String[] args) {
         try {
+            String params = "saludar";
             // Ejecuta el comando de Python
-            Process process = Runtime.getRuntime().exec("python main.py");
+            Process process = Runtime.getRuntime().exec("python main.py " + params + "");
 
             // Lee la salida del proceso de Python
             InputStream inputStream = process.getInputStream();
