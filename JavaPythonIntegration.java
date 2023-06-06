@@ -19,7 +19,7 @@ public class JavaPythonIntegration {
         miClase.setNombre(miClaseArray[2].trim());
         miClase.setEdad(Integer.parseInt(miClaseArray[3].trim()));
         return miClase;
-    }
+    } //Fin método convertToMiClase
 
     /**
      * Método principal
@@ -53,5 +53,5 @@ public class JavaPythonIntegration {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-}
+    } //Fin método main
+} //Fin clase JavaPythonIntegration
