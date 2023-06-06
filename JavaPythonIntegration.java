@@ -5,6 +5,12 @@ import java.io.InputStreamReader;
 
 
 public class JavaPythonIntegration {
+
+    /**
+     * Convierte un String a MiClase
+     * @param miClaseString
+     * @return MiClase 
+     */
     private static MiClase convertToMiClase(String miClaseString) {
         miClaseString = miClaseString.replace("[", "");
         miClaseString = miClaseString.replace("]", "");
@@ -14,6 +20,11 @@ public class JavaPythonIntegration {
         miClase.setEdad(Integer.parseInt(miClaseArray[3].trim()));
         return miClase;
     }
+
+    /**
+     * Método principal
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             String functionName = "cumpleagnos";
@@ -43,6 +54,4 @@ public class JavaPythonIntegration {
             e.printStackTrace();
         }
     }
-
-    
 }
