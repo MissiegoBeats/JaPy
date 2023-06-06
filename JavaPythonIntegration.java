@@ -7,9 +7,17 @@ import java.io.InputStreamReader;
 public class JavaPythonIntegration {
     public static void main(String[] args) {
         try {
-            String params = "saludar";
+            String functionName = "otra_funcion";
+            String[] params = {"parametro1", "parametro2"};  // Parámetros para la función en Python
+
+            // Construye el comando para llamar a la función en Python
+            String command = "python main.py " + functionName;
+            for (String param : params) {
+                command += " " + param;
+            }
+
             // Ejecuta el comando de Python
-            Process process = Runtime.getRuntime().exec("python main.py " + params + "");
+            Process process = Runtime.getRuntime().exec(command);
 
             // Lee la salida del proceso de Python
             InputStream inputStream = process.getInputStream();
