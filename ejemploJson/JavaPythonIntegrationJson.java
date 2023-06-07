@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-
 public class JavaPythonIntegrationJson {
 
     /**
@@ -33,7 +32,40 @@ public class JavaPythonIntegrationJson {
 
             System.out.println(output);
 
-            /*JSONParser parser = new JSONParser();
+            StringBuilder sb = new StringBuilder();
+            sb.append("{");
+    
+            // Split the string by comma and iterate over key-value pairs
+            String[] pairs = output.split(",");
+            for (String pair : pairs) {
+                // Split each pair by colon to separate key and value
+                String[] keyValue = pair.split(":");
+    
+                // Remove leading and trailing quotes from key and value
+                String key = keyValue[0].trim().replaceAll("\"", "");
+                String value = keyValue[1].trim().replaceAll("\"", "");
+    
+                // Append key-value pair to the JSON object
+                sb.append("\"").append(key).append("\": \"").append(value).append("\",");
+            }
+    
+            // Remove trailing comma if present
+            if (sb.charAt(sb.length() - 1) == ',') {
+                sb.deleteCharAt(sb.length() - 1);
+            }
+    
+            // Close the JSON object
+            sb.append("}");
+    
+            // Convert StringBuilder to JSON string
+            String jsonResult = sb.toString();
+    
+            // Print the JSON string
+            System.out.println(jsonResult);
+
+            /*
+            Mejor con esto: 
+            JSONParser parser = new JSONParser();
             JSONObject json = (JSONObject) parser.parse(stringToParse);*/
 
             // Cierra el lector y el proceso

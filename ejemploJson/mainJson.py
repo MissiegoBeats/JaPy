@@ -8,7 +8,7 @@ def cambiarTelefono():
     datos_diccionario = json.loads(datos) #Cargamos el json como diccionario
     datos_diccionario["cliente"]["telefono"] = str(sys.argv[3]) #Modificamos el teléfono
     modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
-    print(str(modificado)) #Imprimimos el json modificado
+    print(modificado) #Imprimimos el json modificado
 
 
 def main():
