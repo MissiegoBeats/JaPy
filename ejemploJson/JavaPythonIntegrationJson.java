@@ -13,15 +13,7 @@ public class JavaPythonIntegrationJson {
     public static void main(String[] args) {
         try {
             String functionName = "cambiarTelefono"; // Nombre de la función en Python
-            String json ="{\"tamano\": \"mediana\","+
-                "\"precio\": 15.67,"+
-                "\"toppings\": [\"champinones\", \"queso extra\", \"pepperoni\", \"albahaca\"],"+
-                "\"cliente\": {"+
-                    "\"nombre\": \"Jane Doe\","+
-                    "\"telefono\": \"455-344-234\","+
-                    "\"correo\": \"janedoe@email.com\""+
-                "}"+
-            "}";
+            String json = "inputData.json"; // Nombre del archivo JSON
             // Construye el comando para llamar a la función en Python
             String command = "python mainJson.py " + functionName; // Comando para llamar a la función en Python
             String[] params = {json, "123-123-123"}; // Parámetros que recibe la función en Python
@@ -41,8 +33,8 @@ public class JavaPythonIntegrationJson {
 
             System.out.println(output);
 
-            //MiClase mc = convertToMiClase(output); // Convierte el String a MiClase
-            //System.out.println(mc.toString());
+            /*JSONParser parser = new JSONParser();
+            JSONObject json = (JSONObject) parser.parse(stringToParse);*/
 
             // Cierra el lector y el proceso
             reader.close();

@@ -3,10 +3,12 @@ import json
 
 
 def cambiarTelefono():
-    datos_diccionario = json.loads(sys.argv[2]) #Cargamos el json como diccionario
+    jsonFile = open(sys.argv[2], "r") #Abrimos el archivo json (sys.argv[2] es el nombre del archivo
+    datos = jsonFile.read() #Leemos el archivo
+    datos_diccionario = json.loads(datos) #Cargamos el json como diccionario
     datos_diccionario["cliente"]["telefono"] = str(sys.argv[3]) #Modificamos el teléfono
     modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
-    print(modificado) #Imprimimos el json modificado
+    print(str(modificado)) #Imprimimos el json modificado
 
 
 def main():
@@ -17,8 +19,6 @@ def main():
     function_name = sys.argv[1]
     
     if function_name == "cambiarTelefono":
-        print("Hola")
-        print(str(sys.argv[2]))
         cambiarTelefono()
     else:
         #print("Hey, voy a llamar a la función: " + function_name)
