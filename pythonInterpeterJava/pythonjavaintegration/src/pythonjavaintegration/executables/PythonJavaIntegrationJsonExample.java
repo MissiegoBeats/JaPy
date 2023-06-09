@@ -1,4 +1,4 @@
-package pythonjavaintegration;
+package pythonjavaintegration.executables;
 
 import java.io.FileReader;
 import org.python.util.PythonInterpreter;

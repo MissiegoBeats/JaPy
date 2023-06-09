@@ -1,4 +1,6 @@
-package pythonjavaintegration;
+package pythonjavaintegration.executables;
+
+import pythonjavaintegration.executables.BuscadorJsonEmpresas;
 
 /**
  *
