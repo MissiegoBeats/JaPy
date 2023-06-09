@@ -19,11 +19,12 @@ public class JavaPythonIntegrationJson {
             for (String param : params) {
                 command += " " + param;
             }
-
-            System.out.println(command);
             
             // Ejecuta el comando de Python
             Process process = Runtime.getRuntime().exec(command);
+            System.out.println("Ejecutando el comando: " + command);
+            process.waitFor();
+            System.out.println("Comando ejecutado");
 
             // Lee la salida del proceso de Python
             InputStream inputStream = process.getInputStream();
@@ -71,7 +72,7 @@ public class JavaPythonIntegrationJson {
             // Cierra el lector y el proceso
             reader.close();
             process.destroy();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     } //Fin método main
