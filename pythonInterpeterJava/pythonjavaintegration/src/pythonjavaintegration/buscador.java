@@ -13,5 +13,6 @@ public class buscador {
         String idjava = "(JAVA)    ";
         BuscadorJsonEmpresas b = new BuscadorJsonEmpresas();
         System.out.println(idjava+"El correo obtenido es: "+b.obtenerCorreo("ABC Corporation", "Juan"));
+        System.out.println(idjava+"El telefono obtenido es: "+b.obtenerTelefono("ABC Corporation"));
     }
 }

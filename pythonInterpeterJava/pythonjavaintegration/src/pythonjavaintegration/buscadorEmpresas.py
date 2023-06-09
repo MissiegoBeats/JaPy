@@ -23,3 +23,12 @@ def buscarCorreo(empresa, usuario, jsonString):
                     print(idpython+"El correo del usuario "+str(nombre_usuario_buscar)+" en la empresa "+str(nombre_empresa_buscar)+" es: "+str(correo_usuario))
                     return correo_usuario
             break
+
+def buscarTelefono(empresa, jsonString):
+    nombre_empresa_buscar = empresa
+    datos = json.loads(jsonString) #Cargamos el json como diccionario
+    for empresa in datos["empresas"]:
+        if empresa["nombre"] == nombre_empresa_buscar:
+            telefono_empresa = empresa["telefono"]
+            print(idpython+"El telefono de la empresa "+str(nombre_empresa_buscar)+" es: "+str(telefono_empresa))
+            return telefono_empresa

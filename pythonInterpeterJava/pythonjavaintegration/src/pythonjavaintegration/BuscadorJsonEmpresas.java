@@ -30,11 +30,21 @@ public class BuscadorJsonEmpresas {
             e.printStackTrace();
         }
     }
+    
     public String obtenerCorreo(String nombreEmpresa, String nombreUsuario){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
         PyString usuario = new PyString("'"+nombreUsuario+"'");
        
         PyObject res = this.interpreter.eval("buscarCorreo("+empresa+","+usuario+","+this.jsonString+")");
+        Object correo = res.__tojava__(Object.class);
+        
+        return correo.toString();
+    }
+    
+    public String obtenerTelefono(String nombreEmpresa){
+        PyString empresa = new PyString("'"+nombreEmpresa+"'");
+       
+        PyObject res = this.interpreter.eval("buscarTelefono("+empresa+","+this.jsonString+")");
         Object correo = res.__tojava__(Object.class);
         
         return correo.toString();
