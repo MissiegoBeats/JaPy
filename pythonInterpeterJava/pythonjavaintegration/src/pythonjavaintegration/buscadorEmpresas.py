@@ -7,8 +7,9 @@ def formatear_json(cadena_json):
         json_objeto = json.loads(cadena_json)
         json_formateado = json.dumps(json_objeto, indent=4)
         return json_formateado
-    except json.JSONDecodeError:
+    except Exception as e:
         print("Error: La cadena no es un JSON valido.")
+        print(str(e))
         return None
 
 def buscarCorreo(empresa, usuario, jsonString):
@@ -32,3 +33,22 @@ def buscarTelefono(empresa, jsonString):
             telefono_empresa = empresa["telefono"]
             print(idpython+"El telefono de la empresa "+str(nombre_empresa_buscar)+" es: "+str(telefono_empresa))
             return telefono_empresa
+
+def buscarDireccion(empresa, jsonString):
+    nombre_empresa_buscar = empresa
+    datos = json.loads(jsonString) #Cargamos el json como diccionario
+    for empresa in datos["empresas"]:
+        if empresa["nombre"] == nombre_empresa_buscar:
+            direccion_empresa = empresa["ubicacion"]
+            print(idpython+"La direccion de la empresa "+str(nombre_empresa_buscar)+" es: "+str(direccion_empresa))
+            return direccion_empresa
+
+def modificarDireccion(empresa, nuevaDireccion, jsonString):
+    nombre_empresa_buscar = empresa
+    datos = json.loads(jsonString) #Cargamos el json como diccionario
+    for empresa in datos["empresas"]:
+        print(empresa["nombre"])
+        if empresa["nombre"] == nombre_empresa_buscar:
+            empresa["ubicacion"] = nuevaDireccion
+            print(idpython+"La direccion de la empresa "+str(nombre_empresa_buscar)+" ha sido modificada a: "+str(nuevaDireccion))
+            return json.dumps(datos)

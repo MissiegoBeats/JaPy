@@ -1,0 +1,204 @@
+{
+    "empresas": [
+        {
+            "nombre": "ABC Corporation",
+            "usuarios": [
+                {
+                    "nombre": "Juan",
+                    "correo": "juan@example.com"
+                },
+                {
+                    "nombre": "Maria",
+                    "correo": "maria@example.com"
+                },
+                {
+                    "nombre": "Pedro",
+                    "correo": "pedro@example.com"
+                }
+            ],
+            "sitio_web": "https://www.abc-corp.com",
+            "ubicacion": "Ciudad XYZ",
+            "telefono": "123-456-7890"
+        },
+        {
+            "nombre": "XYZ Inc",
+            "usuarios": [
+                {
+                    "nombre": "Laura",
+                    "correo": "laura@example.com"
+                },
+                {
+                    "nombre": "Carlos",
+                    "correo": "carlos@example.com"
+                },
+                {
+                    "nombre": "Ana",
+                    "correo": "ana@example.com"
+                }
+            ],
+            "sitio_web": "https://www.xyz-inc.com",
+            "ubicacion": "Ciudad ABC",
+            "telefono": "987-654-3210"
+        },
+        {
+            "nombre": "PQR Solutions",
+            "usuarios": [
+                {
+                    "nombre": "Luis",
+                    "correo": "luis@example.com"
+                },
+                {
+                    "nombre": "Elena",
+                    "correo": "elena@example.com"
+                },
+                {
+                    "nombre": "Miguel",
+                    "correo": "miguel@example.com"
+                }
+            ],
+            "sitio_web": "https://www.pqr-solutions.com",
+            "ubicacion": "Ciudad LMN",
+            "telefono": "555-123-4567"
+        },
+        {
+            "nombre": "123 Industries",
+            "usuarios": [
+                {
+                    "nombre": "Sofia",
+                    "correo": "sofia@example.com"
+                },
+                {
+                    "nombre": "Andres",
+                    "correo": "andres@example.com"
+                },
+                {
+                    "nombre": "Isabela",
+                    "correo": "isabela@example.com"
+                }
+            ],
+            "sitio_web": "https://www.123-industries.com",
+            "ubicacion": "Ciudad XYZ",
+            "telefono": "777-555-1234"
+        },
+        {
+            "nombre": "Tech Solutions",
+            "usuarios": [
+                {
+                    "nombre": "Gabriel",
+                    "correo": "gabriel@example.com"
+                },
+                {
+                    "nombre": "Valeria",
+                    "correo": "valeria@example.com"
+                },
+                {
+                    "nombre": "Daniel",
+                    "correo": "daniel@example.com"
+                }
+            ],
+            "sitio_web": "https://www.tech-solutions.com",
+            "ubicacion": "Ciudad ABC",
+            "telefono": "888-999-7777"
+        },
+        {
+            "nombre": "Innovative Systems",
+            "usuarios": [
+                {
+                    "nombre": "Carolina",
+                    "correo": "carolina@example.com"
+                },
+                {
+                    "nombre": "Javier",
+                    "correo": "javier@example.com"
+                },
+                {
+                    "nombre": "Valentina",
+                    "correo": "valentina@example.com"
+                }
+            ],
+            "sitio_web": "https://www.innovative-systems.com",
+            "ubicacion": "Ciudad XYZ",
+            "telefono": "555-777-8888"
+        },
+        {
+            "nombre": "Global Solutions",
+            "usuarios": [
+                {
+                    "nombre": "Fernando",
+                    "correo": "fernando@example.com"
+                },
+                {
+                    "nombre": "Catalina",
+                    "correo": "catalina@example.com"
+                },
+                {
+                    "nombre": "Diego",
+                    "correo": "diego@example.com"
+                }
+            ],
+            "sitio_web": "https://www.global-solutions.com",
+            "ubicacion": "Ciudad ABC",
+            "telefono": "222-333-4444"
+        },
+        {
+            "nombre": "Software Experts",
+            "usuarios": [
+                {
+                    "nombre": "Julia",
+                    "correo": "julia@example.com"
+                },
+                {
+                    "nombre": "Mateo",
+                    "correo": "mateo@example.com"
+                },
+                {
+                    "nombre": "Camila",
+                    "correo": "camila@example.com"
+                }
+            ],
+            "sitio_web": "https://www.software-experts.com",
+            "ubicacion": "Ciudad XYZ",
+            "telefono": "999-888-7777"
+        },
+        {
+            "nombre": "Data Solutions",
+            "usuarios": [
+                {
+                    "nombre": "Roberto",
+                    "correo": "roberto@example.com"
+                },
+                {
+                    "nombre": "Paola",
+                    "correo": "paola@example.com"
+                },
+                {
+                    "nombre": "Santiago",
+                    "correo": "santiago@example.com"
+                }
+            ],
+            "sitio_web": "https://www.data-solutions.com",
+            "ubicacion": "Ciudad ABC",
+            "telefono": "111-222-3333"
+        },
+        {
+            "nombre": "Web Experts",
+            "usuarios": [
+                {
+                    "nombre": "Valentin",
+                    "correo": "valentin@example.com"
+                },
+                {
+                    "nombre": "Renata",
+                    "correo": "renata@example.com"
+                },
+                {
+                    "nombre": "Matias",
+                    "correo": "matias@example.com"
+                }
+            ],
+            "sitio_web": "https://www.web-experts.com",
+            "ubicacion": "Ciudad XYZ",
+            "telefono": "444-555-6666"
+        }
+    ]
+}
