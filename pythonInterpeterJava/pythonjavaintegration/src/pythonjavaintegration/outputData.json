@@ -1,0 +1,15 @@
+{
+    "cliente": {
+        "nombre": "Jane Doe", 
+        "correo": "janedoe@email.com", 
+        "telefono": "123-123-123"
+    }, 
+    "precio": 15.67, 
+    "toppings": [
+        "champinones", 
+        "queso extra", 
+        "pepperoni", 
+        "albahaca"
+    ], 
+    "tamano": "mediana"
+}

@@ -1,4 +1,4 @@
-package pythonInterpeterJava.pythonjavaintegration.src.pythonjavaintegration;
+package pythonjavaintegration;
 
 import java.io.StringWriter;
 import org.python.core.*;
