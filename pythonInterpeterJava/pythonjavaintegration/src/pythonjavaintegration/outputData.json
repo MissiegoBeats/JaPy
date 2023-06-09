@@ -2,7 +2,7 @@
     "cliente": {
         "nombre": "Jane Doe", 
         "correo": "janedoe@email.com", 
-        "telefono": "123-123-123"
+        "telefono": "456-456-456"
     }, 
     "precio": 15.67, 
     "toppings": [

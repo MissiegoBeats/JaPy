@@ -31,6 +31,23 @@ def cambiarTelefono(archivoInput, telefono):
 
     return modificado #Devolvemos el json modificado
 
+#archivoInput ahora es un JSON, no la referencia a un archivo .json en el sistema
+def cambiarTelefonoDadoJson(j, telefono):
+    datos_diccionario = json.loads(j) #Cargamos el json como diccionario
+
+    datos_diccionario["cliente"]["telefono"] = str(telefono) #Modificamos el telefono
+    modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
+
+    modificado = formatear_json(modificado) #Formateamos el json
+
+    print("Guardando el archivo modificado en outputData.json")
+    outputFile = open("./src/pythonjavaintegration/outputData.json", "w") #Abrimos el archivo de salida
+    outputFile.write(modificado) #Escribimos el json modificado
+    print("Archivo guardado")
+    outputFile.close() #Cerramos el archivo de salida
+
+    return modificado #Devolvemos el json modificado
+    
 
 def main():
     print("hola mundo, esto es el main de jsonprocessing.py")
