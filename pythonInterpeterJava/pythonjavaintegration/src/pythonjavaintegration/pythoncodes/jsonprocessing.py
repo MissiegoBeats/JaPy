@@ -22,7 +22,7 @@ def cambiarTelefono(archivoInput, telefono):
     modificado = formatear_json(modificado) #Formateamos el json
 
     print("Guardando el archivo modificado en outputData.json")
-    outputFile = open("./src/pythonjavaintegration/outputData.json", "w") #Abrimos el archivo de salida
+    outputFile = open("./src/pythonjavaintegration/json/outputData.json", "w") #Abrimos el archivo de salida
     outputFile.write(modificado) #Escribimos el json modificado
     print("Archivo guardado")
     outputFile.close() #Cerramos el archivo de salida
@@ -41,7 +41,7 @@ def cambiarTelefonoDadoJson(j, telefono):
     modificado = formatear_json(modificado) #Formateamos el json
 
     print("Guardando el archivo modificado en outputData.json")
-    outputFile = open("./src/pythonjavaintegration/outputData.json", "w") #Abrimos el archivo de salida
+    outputFile = open("./src/pythonjavaintegration/json/outputData.json", "w") #Abrimos el archivo de salida
     outputFile.write(modificado) #Escribimos el json modificado
     print("Archivo guardado")
     outputFile.close() #Cerramos el archivo de salida

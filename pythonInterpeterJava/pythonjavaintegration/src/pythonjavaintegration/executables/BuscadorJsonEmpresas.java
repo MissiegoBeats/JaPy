@@ -17,8 +17,8 @@ import org.python.util.PythonInterpreter;
 public class BuscadorJsonEmpresas {
     private JSONObject jsonObject = null;
     private PyString jsonString;
-    private String ruta = "./src/pythonjavaintegration/empresas.json";
-    private String rutaPy = "./src/pythonjavaintegration/buscadorEmpresas.py";
+    private String ruta = "./src/pythonjavaintegration/json/empresas.json";
+    private String rutaPy = "./src/pythonjavaintegration/pythoncodes/buscadorEmpresas.py";
     private PythonInterpreter interpreter = new PythonInterpreter();
     
     //Constructor de la clase

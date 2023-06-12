@@ -33,7 +33,7 @@ public class Pythonjavaintegration {
         
         StringWriter output = new StringWriter();
         interpreter.setOut(output);
-        interpreter.execfile("./src/pythonjavaintegration/main.py"); //nota: se puede usar el interpreter.get() para obtener el valor de una variable
+        interpreter.execfile("./src/pythonjavaintegration/pythoncodes/main.py"); //nota: se puede usar el interpreter.get() para obtener el valor de una variable
         String pyOutput = output.toString();
         System.out.println("res del archivo: "+pyOutput);
         
