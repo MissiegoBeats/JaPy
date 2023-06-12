@@ -1,4 +1,4 @@
-package pythonjavaintegration;
+package pythonjavaintegration.executables;
 
 import java.io.FileReader;
 import org.python.util.PythonInterpreter;
@@ -19,9 +19,9 @@ public class PythonJavaIntegrationJsonExample {
         String ruta = "./src/pythonjavaintegration/";
         PythonInterpreter interpreter = new PythonInterpreter();
         
-        interpreter.execfile(ruta + "jsonprocessing.py");
+        interpreter.execfile(ruta + "pythoncodes/jsonprocessing.py");
         
-        PyString ficheroInput = new PyString("str('"+ruta+"inputData.json')");
+        PyString ficheroInput = new PyString("str('"+ruta+"json/inputData.json')");
         PyString nuevoTelefono = new PyString("str('123-123-123')");
         
         PyObject jsonMod = interpreter.eval("cambiarTelefono("+ficheroInput+","+nuevoTelefono+")");
@@ -33,11 +33,11 @@ public class PythonJavaIntegrationJsonExample {
         
         //Para el ejemplo de paso como parámetro, lo voy a leer del archivo inputData.json
         PythonInterpreter pyInterpreter = new PythonInterpreter();
-        pyInterpreter.execfile(ruta + "jsonprocessing.py");
+        pyInterpreter.execfile(ruta + "/pythoncodes/jsonprocessing.py");
         
         try{
             JSONParser parser = new JSONParser();
-            Object obj = parser.parse(new FileReader(ruta+"inputData.json"));
+            Object obj = parser.parse(new FileReader(ruta+"json/inputData.json"));
             JSONObject jsonObject = (JSONObject) obj;
             String jsonString = jsonObject.toString(); 
             PyString jsonPy =  new PyString("str('"+jsonString+"')");
