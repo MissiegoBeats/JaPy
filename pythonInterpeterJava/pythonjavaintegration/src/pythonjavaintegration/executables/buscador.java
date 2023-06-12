@@ -3,8 +3,8 @@ package pythonjavaintegration.executables;
 import pythonjavaintegration.executables.BuscadorJsonEmpresas;
 
 /**
- *
- * @author missi
+ * buscador
+ * @author Andrés Missiego
  */
 public class buscador {
 
