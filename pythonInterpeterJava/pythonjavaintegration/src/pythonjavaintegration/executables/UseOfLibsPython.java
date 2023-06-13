@@ -14,8 +14,8 @@ public class UseOfLibsPython {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Instalando Pandas");
-        installPandas();
+        //System.out.println("Instalando Pandas");
+        //installPandas();
         Rutas rutas = new Rutas();
         PythonInterpreter interpreter = new PythonInterpreter(); 
         interpreter.execfile(rutas.useoflibs);
