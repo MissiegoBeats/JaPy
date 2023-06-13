@@ -19,6 +19,6 @@ public class buscador {
         System.out.println(idjava+"La direccion obtenida es: "+b.obtenerDireccion("Global Solutions"));
         System.out.println(idjava+"Modificando direccion de Global Solutions a Madrid");
         b.modificarDireccion("Global Solutions","Madrid");
-        System.out.println(idjava+"Direccion modificada, consulta el json"); //src/pythonjavaintegration/json/empresas.json
+        System.out.println(idjava+"Direccion modificada, consulta el json"); //src/pythonjavaintegration/json/empresas.json 
     }
 }
