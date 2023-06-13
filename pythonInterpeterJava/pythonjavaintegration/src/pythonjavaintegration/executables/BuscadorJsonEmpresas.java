@@ -11,7 +11,7 @@ import org.python.core.PyString;
 import org.python.util.PythonInterpreter;
 
 /**
- *
+ * BuscadorJsonEmpresas
  * @author missi
  */
 public class BuscadorJsonEmpresas {
