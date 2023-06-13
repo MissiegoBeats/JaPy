@@ -75,3 +75,13 @@ def useofjson():
 useofjson()
 print("--------------------------------------------------")
 
+import math
+
+def useofmath():
+    print("Use of math")
+    print("Pi: "+str(math.pi))
+    print("E: "+str(math.e))
+    print("Cos(0): "+str(math.cos(0)))
+
+useofmath()
+print("--------------------------------------------------")
