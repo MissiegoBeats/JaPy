@@ -30,10 +30,10 @@ import logging
 
 def useoflogging():
     print("Use of logging")
-    logging.basicConfig(filename='./src/pythonjavaintegration/pythoncodes/example.log',level=logging.DEBUG)
+    """logging.basicConfig(filename='./src/pythonjavaintegration/pythoncodes/example.log',level=logging.DEBUG)
     logging.debug(' This message should go to the log file')
     logging.info(' So should this')
-    logging.warning(' And this, too')
+    logging.warning(' And this, too')"""
     print("Log file -> ./src/pythonjavaintegration/pythoncodes/example.log")
 
 useoflogging()
@@ -85,3 +85,22 @@ def useofmath():
 
 useofmath()
 print("--------------------------------------------------")
+
+"""import requests
+
+def useofrequests():
+    print("Use of requests")
+    x = requests.get('https://w3schools.com/python/demopage.htm')
+    print(x.text)
+
+useofrequests()
+print("--------------------------------------------------")
+
+import sockets
+
+def useofsockets():
+    print("Use of sockets")
+    print("Socket: "+str(sockets.gethostname()))
+
+useofsockets()
+print("--------------------------------------------------")"""
