@@ -23,7 +23,7 @@ The project has two main mats:
   - pythonjavaintegration.pythoncodes -> .py file containing the functions/code that is called from Java
 
 ## Links
-### PMI-UAH WEB
+### *PMI-UAH WEB*
 https://pmi-uah.info/
 
 ## Contributors
