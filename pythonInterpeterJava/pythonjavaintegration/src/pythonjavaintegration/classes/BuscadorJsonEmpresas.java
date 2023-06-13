@@ -1,4 +1,6 @@
-package pythonjavaintegration.executables;
+package pythonjavaintegration.classes;
+
+
 
 import java.io.File;
 import java.io.FileReader;
@@ -34,6 +36,10 @@ public class BuscadorJsonEmpresas {
         }
     }
     
+    /**
+     * 
+     * @param newJson 
+     */
     private void actualizarJson(String newJson){
         PyObject j = this.interpreter.eval("formatear_json('"+newJson+"')");
         newJson = (String) j.__tojava__(Object.class);
@@ -49,6 +55,12 @@ public class BuscadorJsonEmpresas {
         }
     }
     
+    /**
+     * 
+     * @param nombreEmpresa
+     * @param nombreUsuario
+     * @return 
+     */
     public String obtenerCorreo(String nombreEmpresa, String nombreUsuario){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
         PyString usuario = new PyString("'"+nombreUsuario+"'");
@@ -59,6 +71,11 @@ public class BuscadorJsonEmpresas {
         return correo.toString();
     }
     
+    /**
+     * 
+     * @param nombreEmpresa
+     * @return 
+     */
     public String obtenerTelefono(String nombreEmpresa){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
        
@@ -68,6 +85,11 @@ public class BuscadorJsonEmpresas {
         return telef.toString();
     }
     
+    /**
+     * 
+     * @param nombreEmpresa
+     * @return 
+     */
     public String obtenerDireccion(String nombreEmpresa){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
        
@@ -77,6 +99,11 @@ public class BuscadorJsonEmpresas {
         return dir.toString();
     }
     
+    /**
+     * 
+     * @param nombreEmpresa
+     * @param nuevaDireccion 
+     */
     public void modificarDireccion(String nombreEmpresa, String nuevaDireccion){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
         PyString direccion = new PyString("'"+nuevaDireccion+"'");
