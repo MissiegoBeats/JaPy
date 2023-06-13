@@ -1,7 +1,7 @@
 # **python-java-calls**
 
 ## Repository description
-### ES
+### *ES*
 Llamando python desde java (funciones y archivos). 
 Desarrollado para un proyecto de investigación del PMI-UAH.
 El proyecto tiene dos carpetas principales:
@@ -11,7 +11,7 @@ El proyecto tiene dos carpetas principales:
   - pythonjavaintegration.executables -> ejectuables java
   - pythonjavaintegration.json -> archivos json utilizados
   - pythonjavaintegration.pythoncodes -> archivo .py que contienen las funciones/código que se llama desde java
-### EN
+### *EN*
 Calling Python from Java (functions and files).
 Developed for a PMI-UAH research project.
 The project has two main mats:
