@@ -1,6 +1,7 @@
 # **python-java-calls**
 
 ## Repository description
+
 ### *ES*
 Llamando python desde java (funciones y archivos). 
 Desarrollado para un proyecto de investigación del PMI-UAH.
@@ -11,6 +12,7 @@ El proyecto tiene dos carpetas principales:
   - pythonjavaintegration.executables -> ejectuables java
   - pythonjavaintegration.json -> archivos json utilizados
   - pythonjavaintegration.pythoncodes -> archivo .py que contienen las funciones/código que se llama desde java
+Para instalar JEP -> https://github.com/ninia/jep
 ### *EN*
 Calling Python from Java (functions and files).
 Developed for a PMI-UAH research project.
@@ -21,6 +23,7 @@ The project has two main mats:
   - pythonjavaintegration.executables -> java executables
   - pythonjavaintegration.json -> used json files
   - pythonjavaintegration.pythoncodes -> .py file containing the functions/code that is called from Java
+To install JEP -> https://github.com/ninia/jep
 
 ## Links
 ### *PMI-UAH WEB*
