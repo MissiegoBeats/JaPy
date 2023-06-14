@@ -117,3 +117,16 @@ def useofdatetime():
 useofdatetime()
 print("--------------------------------------------------")
 
+"""import jsonify
+
+def useofjsonify():
+    print("Use of jsonify")
+    x = {
+        "name": "John",
+        "age": 30,
+        "city": "New York"
+    }
+    print(jsonify.dumps(x))
+
+useofjsonify()
+print("--------------------------------------------------")"""
