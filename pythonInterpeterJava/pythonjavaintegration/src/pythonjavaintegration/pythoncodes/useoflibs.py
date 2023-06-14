@@ -104,3 +104,16 @@ def useofsockets():
 
 useofsockets()
 print("--------------------------------------------------")"""
+
+import datetime
+
+def useofdatetime():
+    print("Use of datetime")
+    x = datetime.datetime.now()
+    print(x)
+    print(x.year)
+    print(x.strftime("%A"))
+
+useofdatetime()
+print("--------------------------------------------------")
+
