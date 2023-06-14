@@ -16,15 +16,15 @@ def useofsys():
 useofsys()
 print("--------------------------------------------------")
 
-#import pandas as pd
+import pandas as pd
 
-"""def useofpandas():
+def useofpandas():
     print("use of pandas")
     df = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})
     print(df)
     
 useofpandas()
-print("--------------------------------------------------")"""
+print("--------------------------------------------------")
 
 import logging
 
@@ -103,4 +103,44 @@ def useofsockets():
     print("Socket: "+str(sockets.gethostname()))
 
 useofsockets()
+print("--------------------------------------------------")"""
+
+import datetime
+
+def useofdatetime():
+    print("Use of datetime")
+    x = datetime.datetime.now()
+    print(x)
+    print(x.year)
+    print(x.strftime("%A"))
+
+useofdatetime()
+print("--------------------------------------------------")
+
+"""import jsonify
+
+def useofjsonify():
+    print("Use of jsonify")
+    x = {
+        "name": "John",
+        "age": 30,
+        "city": "New York"
+    }
+    print(jsonify.dumps(x))
+
+useofjsonify()
+print("--------------------------------------------------")
+
+import pymysql
+
+def useofpymysql():
+    print("Use of pymysql")
+    db = pymysql.connect("localhost","root","root","test")
+    cursor = db.cursor()
+    cursor.execute("SELECT VERSION()")
+    data = cursor.fetchone()
+    print("Database version : %s " % data)
+    db.close()
+
+useofpymysql()
 print("--------------------------------------------------")"""
