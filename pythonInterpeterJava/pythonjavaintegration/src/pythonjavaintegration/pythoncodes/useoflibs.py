@@ -130,3 +130,17 @@ def useofjsonify():
 
 useofjsonify()
 print("--------------------------------------------------")"""
+
+import pymysql
+
+def useofpymysql():
+    print("Use of pymysql")
+    db = pymysql.connect("localhost","root","root","test")
+    cursor = db.cursor()
+    cursor.execute("SELECT VERSION()")
+    data = cursor.fetchone()
+    print("Database version : %s " % data)
+    db.close()
+
+useofpymysql()
+print("--------------------------------------------------")
