@@ -11,11 +11,13 @@ public class ProcessBuilderExample {
     /**
      * @param args the command line arguments
      */
+    
+    //NOTA: FUNCIONAN LAS LIBRERÍAS EXTERNAS!!!
     public static void main(String[] args) {
         try {
             // Ruta al ejecutable de Python y el script Python
             String pythonExecutable = "python";
-            String pythonScript = "path/to/your/python/script.py"; //TODO: Cambiar ruta
+            String pythonScript = "./src/pythonjavaintegration/pythoncodes/useoflibs.py";
 
             // JSON de ejemplo como cadena
             String jsonParameter = "{\"key\": \"value\"}";
