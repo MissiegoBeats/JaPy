@@ -1,9 +1,17 @@
-#Printing header
-print("***********************************")
-print("*           Use of libs           *")
-print("***********************************")
-
 import sys
+import pymysql
+import pandas as pd
+import logging
+import getopt 
+#Import is ok so code will work in jython (not implemented due to the java code structure implemented)
+#To use args in the java code, check mainExample folder (not using jython)
+#With PythonInterpreter (set() function), you can set arguments to the python code
+import json
+import math
+import requests
+import sockets
+import datetime
+import jsonify
 
 def useofsys():
     print("Use of sys")
@@ -13,20 +21,10 @@ def useofsys():
     print("Executable: "+str(sys.executable))
     print("Platform: "+str(sys.platform))
 
-useofsys()
-print("--------------------------------------------------")
-
-import pandas as pd
-
 def useofpandas():
     print("use of pandas")
     df = pd.DataFrame({'col1': [1, 2], 'col2': [3, 4]})
     print(df)
-    
-useofpandas()
-print("----------------------------------------------------------------------------------")
-
-import logging
 
 def useoflogging():
     print("Use of logging")
@@ -35,14 +33,6 @@ def useoflogging():
     logging.info(' So should this')
     logging.warning(' And this, too')
     print("Log file -> ./src/pythonjavaintegration/pythoncodes/example.log")
-
-useoflogging()
-print("----------------------------------------------------------------------------------")
-
-import getopt 
-#Import is ok so code will work in jython (not implemented due to the java code structure implemented)
-#To use args in the java code, check mainExample folder (not using jython)
-#With PythonInterpreter (set() function), you can set arguments to the python code
 
 """def useofgetopt():
     print("Use of getopt")
@@ -63,8 +53,6 @@ import getopt
 
 useofgetopt()"""
 
-import json
-
 def useofjson():
     print("Use of json")
     x = '{ "name":"John", "age":30, "city":"New York"}'
@@ -72,40 +60,20 @@ def useofjson():
     print(y["age"])
     print(y["name"])
 
-useofjson()
-print("----------------------------------------------------------------------------------")
-
-import math
-
 def useofmath():
     print("Use of math")
     print("Pi: "+str(math.pi))
     print("E: "+str(math.e))
     print("Cos(0): "+str(math.cos(0)))
 
-useofmath()
-print("----------------------------------------------------------------------------------")
-
-import requests
-
 def useofrequests():
     print("Use of requests")
     x = requests.get('https://w3schools.com/python/demopage.htm')
     print(x.text)
 
-useofrequests()
-print("----------------------------------------------------------------------------------")
-
-import sockets
-
 def useofsockets():
     print("Use of sockets")
     print("Socket: "+str(sockets.gethostname()))
-
-useofsockets()
-print("----------------------------------------------------------------------------------")
-
-import datetime
 
 def useofdatetime():
     print("Use of datetime")
@@ -113,11 +81,6 @@ def useofdatetime():
     print(x)
     print(x.year)
     print(x.strftime("%A"))
-
-useofdatetime()
-print("----------------------------------------------------------------------------------")
-
-import jsonify
 
 def useofjsonify():
     print("Use of jsonify")
@@ -128,11 +91,6 @@ def useofjsonify():
     }
     print(jsonify.dumps(x))
 
-useofjsonify()
-print("----------------------------------------------------------------------------------")
-
-import pymysql
-
 def useofpymysql():
     print("Use of pymysql")
     db = pymysql.connect("localhost","root","root","test")
@@ -142,5 +100,27 @@ def useofpymysql():
     print("Database version : %s " % data)
     db.close()
 
+#Printing header
+print("***********************************")
+print("*           Use of libs           *")
+print("***********************************")
+useofsys()
+print("----------------------------------------------------------------------------------")
+useofpandas()
+print("----------------------------------------------------------------------------------")
+useoflogging()
+print("----------------------------------------------------------------------------------")
+useofjson()
+print("----------------------------------------------------------------------------------")
+useofmath()
+print("----------------------------------------------------------------------------------")
+useofrequests()
+print("----------------------------------------------------------------------------------")
+useofsockets()
+print("----------------------------------------------------------------------------------")
+useofdatetime()
+print("----------------------------------------------------------------------------------")
+useofjsonify()
+print("----------------------------------------------------------------------------------")
 useofpymysql()
 print("----------------------------------------------------------------------------------")
