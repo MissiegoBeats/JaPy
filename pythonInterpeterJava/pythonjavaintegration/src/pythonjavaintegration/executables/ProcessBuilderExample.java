@@ -1,6 +1,7 @@
 package pythonjavaintegration.executables;
 
 import java.io.IOException;
+import pythonjavaintegration.classes.Rutas;
 
 /**
  * ProcessBuilderExample
@@ -16,8 +17,9 @@ public class ProcessBuilderExample {
     public static void main(String[] args) {
         try {
             // Ruta al ejecutable de Python y el script Python
+            Rutas rutas = new Rutas();
             String pythonExecutable = "python";
-            String pythonScript = "./src/pythonjavaintegration/pythoncodes/useoflibs.py";
+            String pythonScript = rutas.useoflibs;
 
             // JSON de ejemplo como cadena
             String jsonParameter = "{\"key\": \"value\"}";
