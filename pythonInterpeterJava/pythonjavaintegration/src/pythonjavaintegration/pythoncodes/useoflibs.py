@@ -24,7 +24,7 @@ def useofpandas():
     print(df)
     
 useofpandas()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import logging
 
@@ -37,7 +37,7 @@ def useoflogging():
     print("Log file -> ./src/pythonjavaintegration/pythoncodes/example.log")
 
 useoflogging()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import getopt 
 #Import is ok so code will work in jython (not implemented due to the java code structure implemented)
@@ -73,7 +73,7 @@ def useofjson():
     print(y["name"])
 
 useofjson()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import math
 
@@ -84,7 +84,7 @@ def useofmath():
     print("Cos(0): "+str(math.cos(0)))
 
 useofmath()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import requests
 
@@ -94,7 +94,7 @@ def useofrequests():
     print(x.text)
 
 useofrequests()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import sockets
 
@@ -103,7 +103,7 @@ def useofsockets():
     print("Socket: "+str(sockets.gethostname()))
 
 useofsockets()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import datetime
 
@@ -115,7 +115,7 @@ def useofdatetime():
     print(x.strftime("%A"))
 
 useofdatetime()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import jsonify
 
@@ -129,7 +129,7 @@ def useofjsonify():
     print(jsonify.dumps(x))
 
 useofjsonify()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
 
 import pymysql
 
@@ -143,4 +143,4 @@ def useofpymysql():
     db.close()
 
 useofpymysql()
-print("--------------------------------------------------")
+print("----------------------------------------------------------------------------------")
