@@ -30,10 +30,10 @@ import logging
 
 def useoflogging():
     print("Use of logging")
-    """logging.basicConfig(filename='./src/pythonjavaintegration/pythoncodes/example.log',level=logging.DEBUG)
+    logging.basicConfig(filename='./src/pythonjavaintegration/pythoncodes/example.log',level=logging.DEBUG)
     logging.debug(' This message should go to the log file')
     logging.info(' So should this')
-    logging.warning(' And this, too')"""
+    logging.warning(' And this, too')
     print("Log file -> ./src/pythonjavaintegration/pythoncodes/example.log")
 
 useoflogging()
@@ -86,7 +86,7 @@ def useofmath():
 useofmath()
 print("--------------------------------------------------")
 
-"""import requests
+import requests
 
 def useofrequests():
     print("Use of requests")
@@ -103,7 +103,7 @@ def useofsockets():
     print("Socket: "+str(sockets.gethostname()))
 
 useofsockets()
-print("--------------------------------------------------")"""
+print("--------------------------------------------------")
 
 import datetime
 
@@ -117,7 +117,7 @@ def useofdatetime():
 useofdatetime()
 print("--------------------------------------------------")
 
-"""import jsonify
+import jsonify
 
 def useofjsonify():
     print("Use of jsonify")
@@ -143,4 +143,4 @@ def useofpymysql():
     db.close()
 
 useofpymysql()
-print("--------------------------------------------------")"""
+print("--------------------------------------------------")
