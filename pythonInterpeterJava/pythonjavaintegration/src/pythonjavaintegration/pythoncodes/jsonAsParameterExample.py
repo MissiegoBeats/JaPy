@@ -17,9 +17,7 @@ def cambiarTelefono():
         2. Archivo json
         3. Teléfono
     """
-    print("En cambiarTelefono()")
     jsonString = sys.argv[2]
-    print(jsonString)
     datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
     datos_diccionario["telefono"] = str(sys.argv[3]) #Modificamos el teléfono
     modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
@@ -28,6 +26,20 @@ def cambiarTelefono():
     outputFile.close() #Cerramos el archivo de salida"""
     print("Modificado: ")
     print(modificado) #Imprimimos el json modificado
+
+def consultarLocalizacion():
+    """
+    Argumentos de entrada (sys.argv[i]): 
+        0. Nombre del script
+        1. Nombre de la función a llamar
+        2. Archivo json
+        3. Nombre
+    """
+    jsonString = sys.argv[2]
+    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
+    nombre = str(sys.argv[3]) #Obtenemos el nombre
+    localizacion = datos_diccionario[nombre] #Obtenemos la localización
+    print("Localización de " + nombre + ": " + localizacion) #Imprimimos la localización
 
 def main():
     print("hola mundo, esto es el main de jsonAsParameterExample.py")
@@ -41,6 +53,8 @@ def main():
     
     if function_name == "cambiarTelefono":
         cambiarTelefono()
+    elif function_name == "consultarLocalizacion":
+        consultarLocalizacion()
     else:
         print("Función desconocida: " + function_name + ".")
 
