@@ -3,6 +3,7 @@ package pythonjavaintegration.executables;
 import java.io.StringWriter;
 import org.python.core.*;
 import org.python.util.PythonInterpreter;
+import pythonjavaintegration.classes.Rutas;
 
 /**
  * Pythonjavaintregration
@@ -14,6 +15,7 @@ public class Pythonjavaintegration {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Rutas rutas = new Rutas(); 
         String directoryName = System.getProperty("user.dir");
         System.out.println(directoryName);
         //ES: para ejecutar líneas de código python se hace de la siguiente manera
@@ -33,7 +35,7 @@ public class Pythonjavaintegration {
         
         StringWriter output = new StringWriter();
         interpreter.setOut(output);
-        interpreter.execfile("./src/pythonjavaintegration/pythoncodes/main.py"); //nota: se puede usar el interpreter.get() para obtener el valor de una variable
+        interpreter.execfile(rutas.main); //nota: se puede usar el interpreter.get() para obtener el valor de una variable
         String pyOutput = output.toString();
         System.out.println("res del archivo: "+pyOutput);
         

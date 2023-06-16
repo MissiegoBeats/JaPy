@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import pythonjavaintegration.classes.Rutas;
 
 public class JavaPythonIntegrationJson {
 
@@ -13,10 +14,11 @@ public class JavaPythonIntegrationJson {
      */
     public static void main(String[] args) {
         try {
+            Rutas rutas = new Rutas(); 
             String functionName = "cambiarTelefono"; // Nombre de la función en Python
-            String json = "./src/pythonjavaintegration/json/inputData.json"; // Nombre del archivo JSON
+            String json = rutas.inputData; // Nombre del archivo JSON
             // Construye el comando para llamar a la función en Python
-            String command = "python ./src/pythonjavaintregration/pythoncodes/mainJson.py " + functionName; // Comando para llamar a la función en Python
+            String command = "python "+ rutas.mainJson + functionName; // Comando para llamar a la función en Python
             String[] params = {json, "123-123-123"}; // Parámetros que recibe la función en Python
             for (String param : params) {
                 command += " " + param;
