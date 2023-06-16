@@ -17,10 +17,11 @@ import org.python.util.PythonInterpreter;
  * @author missi
  */
 public class BuscadorJsonEmpresas {
+    private Rutas rutas = new Rutas(); 
     private JSONObject jsonObject = null;
     private PyString jsonString;
-    private String ruta = "./src/pythonjavaintegration/json/empresas.json";
-    private String rutaPy = "./src/pythonjavaintegration/pythoncodes/buscadorEmpresas.py";
+    private String ruta = this.rutas.empresas;
+    private String rutaPy = this.rutas.buscadorEmpresas;
     private PythonInterpreter interpreter = new PythonInterpreter();
     
     //Constructor de la clase

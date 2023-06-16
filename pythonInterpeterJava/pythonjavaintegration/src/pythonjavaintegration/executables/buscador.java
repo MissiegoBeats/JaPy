@@ -14,7 +14,6 @@ public class buscador {
     public static void main(String[] args) {
         String idjava = "(JAVA)    "; //Java identifier
         BuscadorJsonEmpresas b = new BuscadorJsonEmpresas();
-        
         //ES: llamando a distintas funciones que a su vez llaman a funciones en python
         //EN: calling some functions that call python functions
         System.out.println(idjava+"El correo obtenido es: "+b.obtenerCorreo("ABC Corporation", "Juan"));
