@@ -56,22 +56,22 @@ public class JsonAsParameterExample {
             // Ruta al ejecutable de Python y el script Python
             Rutas rutas = new Rutas();
             String pythonExecutable = "python";
-            String pythonScript = rutas.jsonAsParameterExample; //TODO change
-            String function = "cambiarTelefono"; //TODO change
-            String telefono = "123-123-123"; //TODO change
+            String pythonScript = rutas.jsonAsParameterExample;
+            String function = "consultarLocalizacion";
+            String nombre = "Pepe";
 
             // JSON de ejemplo como cadena
             JSONObject jsonObject = new JSONObject();
 
             jsonObject.put("\"nombre\"", "\"Pepe\"");
             jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"ciudad\"", "\"Madrid\"");
+            jsonObject.put("\"localizacion\"", "\"Madrid\"");
             jsonObject.put("\"telefono\"", "\"234-567-890\"");
             String jsonParameter = jsonObject.toString();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
-            //TODO change
-            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, function, jsonParameter, telefono); //python <file_name> <arg1> ... <argN>
+            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
+                    pythonScript, function, jsonParameter, nombre); //python <file_name> <arg1> ... <argN>
 
             // Ejecutar el comando y obtener el proceso resultante
             Process process = processBuilder.start();

@@ -38,7 +38,7 @@ def consultarLocalizacion():
     jsonString = sys.argv[2]
     datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
     nombre = str(sys.argv[3]) #Obtenemos el nombre
-    localizacion = datos_diccionario[nombre] #Obtenemos la localización
+    localizacion = datos_diccionario["localizacion"] #Obtenemos la localización
     print("Localización de " + nombre + ": " + localizacion) #Imprimimos la localización
 
 def main():
