@@ -44,13 +44,10 @@ def consultarLocalizacion():
 def main():
     print("hola mundo, esto es el main de jsonAsParameterExample.py")
     print("Argumentos: "+str(sys.argv))
-
     if len(sys.argv) < 2:
         print("Debe proporcionar el nombre de la función a llamar como argumento")
         return
-
     function_name = sys.argv[1]
-    
     if function_name == "cambiarTelefono":
         cambiarTelefono()
     elif function_name == "consultarLocalizacion":
