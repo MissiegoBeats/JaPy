@@ -1,31 +1,38 @@
 package pythonjavaintegration.executables;
 
 import java.io.IOException;
+import org.json.simple.JSONObject;
 import pythonjavaintegration.classes.Rutas;
 
 /**
- * ProcessBuilderExample
+ * JsonAsParameterExample
  * @author Andrés Missiego
  */
-public class ProcessBuilderExample {
+public class JsonAsParameterExample {
 
     /**
      * @param args the command line arguments
      */
-    
-    //NOTA: FUNCIONAN LAS LIBRERÍAS EXTERNAS!!!
     public static void main(String[] args) {
         try {
             // Ruta al ejecutable de Python y el script Python
             Rutas rutas = new Rutas();
             String pythonExecutable = "python";
-            String pythonScript = rutas.useoflibs;
+            String pythonScript = rutas.jsonAsParameterExample;
+            String function = "cambiarTelefono";
+            String telefono = "123-123-123";
 
             // JSON de ejemplo como cadena
-            String jsonParameter = "{\"key\": \"value\"}";
+            JSONObject jsonObject = new JSONObject();
+
+            jsonObject.put("\"nombre\"", "\"Pepe\"");
+            jsonObject.put("\"edad\"", 24);
+            jsonObject.put("\"ciudad\"", "\"Madrid\"");
+            jsonObject.put("\"telefono\"", "\"234-567-890\"");
+            String jsonParameter = jsonObject.toString();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
-            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, jsonParameter); //python <file_name> <arg1> ... <argN>
+            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, function, jsonParameter, telefono); //python <file_name> <arg1> ... <argN>
 
             // Ejecutar el comando y obtener el proceso resultante
             Process process = processBuilder.start();
@@ -48,4 +55,5 @@ public class ProcessBuilderExample {
             e.printStackTrace();
         }
     }
+    
 }
