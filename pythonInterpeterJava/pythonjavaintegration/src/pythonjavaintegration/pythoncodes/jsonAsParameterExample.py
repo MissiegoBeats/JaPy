@@ -40,7 +40,6 @@ def main():
     function_name = sys.argv[1]
     
     if function_name == "cambiarTelefono":
-        print("Hey, voy a llamar a cambiarTelefono()")
         cambiarTelefono()
     else:
         print("Función desconocida: " + function_name + ".")
