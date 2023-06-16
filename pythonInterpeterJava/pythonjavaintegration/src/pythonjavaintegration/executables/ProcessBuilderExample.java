@@ -25,13 +25,13 @@ public class ProcessBuilderExample {
             String jsonParameter = "{\"key\": \"value\"}";
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
-            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, jsonParameter);
+            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, jsonParameter); //python <file_name> <arg1> ... <argN>
 
             // Ejecutar el comando y obtener el proceso resultante
             Process process = processBuilder.start();
 
             // Leer la salida del proceso (puede ser opcional dependiendo de tu caso de uso)
-            // Aquí se imprime la salida del script Python en la consola ed Java
+            // Aquí se imprime la salida del script Python en la consola de Java
             java.io.BufferedReader reader = new java.io.BufferedReader(
                     new java.io.InputStreamReader(process.getInputStream()));
             
