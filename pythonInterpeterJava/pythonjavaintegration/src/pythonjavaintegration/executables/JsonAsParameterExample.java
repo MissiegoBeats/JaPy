@@ -9,6 +9,18 @@ import pythonjavaintegration.classes.Rutas;
  * @author Andrés Missiego
  */
 public class JsonAsParameterExample {
+    public static String generarJson(){
+        // JSON de ejemplo como cadena
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("\"nombre\"", "\"Pepe\"");
+        jsonObject.put("\"edad\"", 24);
+        jsonObject.put("\"localizacion\"", "\"Madrid\"");
+        jsonObject.put("\"telefono\"", "\"234-567-890\"");
+        String jsonString = jsonObject.toString();
+        return jsonString;
+    }
+    
     public static void example1(){
         try {
             // Ruta al ejecutable de Python y el script Python
@@ -18,15 +30,8 @@ public class JsonAsParameterExample {
             String function = "cambiarTelefono";
             String telefono = "123-123-123";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"ciudad\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
-
+            String jsonParameter = generarJson();
+            
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, function, jsonParameter, telefono); //python <file_name> <arg1> ... <argN>
 
@@ -60,14 +65,7 @@ public class JsonAsParameterExample {
             String function = "consultarLocalizacion";
             String nombre = "Pepe";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
@@ -104,14 +102,7 @@ public class JsonAsParameterExample {
             String key = "trabajo";
             String value = "programador";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
@@ -147,14 +138,7 @@ public class JsonAsParameterExample {
             String function = "eliminarElemento";
             String key = "telefono";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
@@ -190,14 +174,7 @@ public class JsonAsParameterExample {
             String function = "eliminarElemento";
             String key = "notAKey";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
@@ -233,15 +210,8 @@ public class JsonAsParameterExample {
             String function = "encontrarValor";
             String key = "nombre";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
-
+            String jsonParameter = generarJson();
+            
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
                     pythonScript, function, jsonParameter, key); //python <file_name> <arg1> ... <argN>
