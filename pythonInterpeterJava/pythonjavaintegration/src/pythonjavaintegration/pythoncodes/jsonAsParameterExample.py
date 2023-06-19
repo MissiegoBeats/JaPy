@@ -79,6 +79,24 @@ def eliminarElemento():
     print("Elemento eliminado: ")
     print(modificado) #Imprimimos el json modificado
 
+def encontrarValor():
+    """
+    Argumentos de entrada (sys.argv[i]):
+        0. Nombre del script
+        1. Nombre de la función a llamar
+        2. json
+        3. Key
+    """
+    jsonString = sys.argv[2]
+    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
+    key = str(sys.argv[3]) #Obtenemos la key
+    try:
+        value = datos_diccionario[key] #Obtenemos el valor
+    except KeyError:
+        print("No existe el elemento con la key " + key)
+        return
+    print("Valor: " + value) #Imprimimos el valor
+
 def main():
     print("hola mundo, esto es el main de jsonAsParameterExample.py")
     print("Argumentos: "+str(sys.argv))
@@ -94,6 +112,8 @@ def main():
         agnadirElemento()
     elif function_name == "eliminarElemento":
         eliminarElemento()
+    elif function_name == "encontrarValor":
+        encontrarValor()
     else:
         print("Función desconocida: " + function_name + ".")
 
