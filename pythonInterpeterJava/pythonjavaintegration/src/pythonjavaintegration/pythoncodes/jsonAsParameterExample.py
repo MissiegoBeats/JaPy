@@ -70,7 +70,11 @@ def eliminarElemento():
     jsonString = sys.argv[2]
     datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
     key = str(sys.argv[3]) #Obtenemos la key
-    del datos_diccionario[key] #Eliminamos el elemento
+    try:
+        del datos_diccionario[key] #Eliminamos el elemento
+    except KeyError:
+        print("No existe el elemento con la key " + key)
+        return
     modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
     print("Elemento eliminado: ")
     print(modificado) #Imprimimos el json modificado
@@ -88,6 +92,8 @@ def main():
         consultarLocalizacion()
     elif function_name == "agnadirElemento":
         agnadirElemento()
+    elif function_name == "eliminarElemento":
+        eliminarElemento()
     else:
         print("Función desconocida: " + function_name + ".")
 
