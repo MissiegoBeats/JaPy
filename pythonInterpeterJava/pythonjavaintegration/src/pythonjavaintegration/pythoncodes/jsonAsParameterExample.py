@@ -1,5 +1,7 @@
 import sys
 import json
+import io 
+import csv
 
 """
 Los argumentos de entrada del script son los siguientes: 
@@ -97,6 +99,30 @@ def encontrarValor():
         return
     print("Valor: " + value) #Imprimimos el valor
 
+def parseJsonToCsv():
+    """
+    Argumentos de entrada (sys.argv[i]):
+        0. Nombre del script
+        1. Nombre de la función a llamar
+        2. json
+    """
+    jsonString = sys.argv[2]
+    # Convertir el JSON string a un objeto JSON
+    json_data = json.loads(jsonString)
+    # Create a StringIO object to store the CSV data
+    csv_output = io.StringIO()
+    # Create a CSV writer using the StringIO object
+    writer = csv.writer(csv_output)
+    # Write the header row
+    writer.writerow(json_data.keys())
+    # Write the data rows
+    writer.writerow(json_data.values())
+    # Get the CSV content as a string
+    csv_string = csv_output.getvalue()
+    print("csv_string: ")
+    print(csv_string)
+    
+
 def main():
     print("hola mundo, esto es el main de jsonAsParameterExample.py")
     print("Argumentos: "+str(sys.argv))
@@ -114,6 +140,8 @@ def main():
         eliminarElemento()
     elif function_name == "encontrarValor":
         encontrarValor()
+    elif function_name == "parseJsonToCsv":
+        parseJsonToCsv()
     else:
         print("Función desconocida: " + function_name + ".")
 
