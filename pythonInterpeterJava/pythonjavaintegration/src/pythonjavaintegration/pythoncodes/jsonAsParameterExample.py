@@ -121,10 +121,23 @@ def parseJsonToCsv():
     csv_string = csv_output.getvalue()
     print("csv_string: ")
     print(csv_string)
-    
+
+def writeJsonToFile():
+    """
+    Argumentos de entrada (sys.argv[i]):
+        0. Nombre del script
+        1. Nombre de la función a llamar
+        2. json
+        3. Nombre del archivo de salida
+    """
+    jsonString = sys.argv[2]
+    ruta = "./src/pythonjavaintegration/json/"
+    outputFile = open(ruta+sys.argv[3], "w") #Abrimos el archivo de salida
+    outputFile.write(jsonString) #Escribimos el json
+    outputFile.close() #Cerramos el archivo de salida
+    print("Json escrito en el archivo " + sys.argv[3])
 
 def main():
-    print("hola mundo, esto es el main de jsonAsParameterExample.py")
     print("Argumentos: "+str(sys.argv))
     if len(sys.argv) < 2:
         print("Debe proporcionar el nombre de la función a llamar como argumento")
@@ -142,6 +155,8 @@ def main():
         encontrarValor()
     elif function_name == "parseJsonToCsv":
         parseJsonToCsv()
+    elif function_name == "writeJsonToFile":
+        writeJsonToFile()
     else:
         print("Función desconocida: " + function_name + ".")
 
