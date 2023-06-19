@@ -14,7 +14,7 @@ def cambiarTelefono():
     Argumentos de entrada (sys.argv[i]): 
         0. Nombre del script
         1. Nombre de la función a llamar
-        2. Archivo json
+        2. json
         3. Teléfono
     """
     jsonString = sys.argv[2]
@@ -32,7 +32,7 @@ def consultarLocalizacion():
     Argumentos de entrada (sys.argv[i]): 
         0. Nombre del script
         1. Nombre de la función a llamar
-        2. Archivo json
+        2. json
         3. Nombre
     """
     jsonString = sys.argv[2]
@@ -40,6 +40,24 @@ def consultarLocalizacion():
     nombre = str(sys.argv[3]) #Obtenemos el nombre
     localizacion = datos_diccionario["localizacion"] #Obtenemos la localización
     print("Localización de " + nombre + ": " + localizacion) #Imprimimos la localización
+
+def agnadirElemento():
+    """
+    Argumentos de entrada (sys.argv[i]):
+        0. Nombre del script
+        1. Nombre de la función a llamar
+        2. json
+        3. Key
+        4. Value
+    """
+    jsonString = sys.argv[2]
+    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
+    key = str(sys.argv[3]) #Obtenemos la key
+    value = str(sys.argv[4]) #Obtenemos el value
+    datos_diccionario[key] = value #Añadimos el elemento
+    modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
+    print("Elemento añadido: ")
+    print(modificado) #Imprimimos el json modificado
 
 def main():
     print("hola mundo, esto es el main de jsonAsParameterExample.py")
@@ -52,6 +70,8 @@ def main():
         cambiarTelefono()
     elif function_name == "consultarLocalizacion":
         consultarLocalizacion()
+    elif function_name == "agnadirElemento":
+        agnadirElemento()
     else:
         print("Función desconocida: " + function_name + ".")
 
