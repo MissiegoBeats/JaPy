@@ -59,6 +59,22 @@ def agnadirElemento():
     print("Elemento añadido: ")
     print(modificado) #Imprimimos el json modificado
 
+def eliminarElemento():
+    """
+    Argumentos de entrada (sys.argv[i]):
+        0. Nombre del script
+        1. Nombre de la función a llamar
+        2. json
+        3. Key
+    """
+    jsonString = sys.argv[2]
+    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
+    key = str(sys.argv[3]) #Obtenemos la key
+    del datos_diccionario[key] #Eliminamos el elemento
+    modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
+    print("Elemento eliminado: ")
+    print(modificado) #Imprimimos el json modificado
+
 def main():
     print("hola mundo, esto es el main de jsonAsParameterExample.py")
     print("Argumentos: "+str(sys.argv))
