@@ -9,6 +9,18 @@ import pythonjavaintegration.classes.Rutas;
  * @author Andrés Missiego
  */
 public class JsonAsParameterExample {
+    public static String generarJson(){
+        // JSON de ejemplo como cadena
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("\"nombre\"", "\"Pepe\"");
+        jsonObject.put("\"edad\"", 24);
+        jsonObject.put("\"localizacion\"", "\"Madrid\"");
+        jsonObject.put("\"telefono\"", "\"234-567-890\"");
+        String jsonString = jsonObject.toString();
+        return jsonString;
+    }
+    
     public static void example1(){
         try {
             // Ruta al ejecutable de Python y el script Python
@@ -18,15 +30,8 @@ public class JsonAsParameterExample {
             String function = "cambiarTelefono";
             String telefono = "123-123-123";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"ciudad\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
-
+            String jsonParameter = generarJson();
+            
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, function, jsonParameter, telefono); //python <file_name> <arg1> ... <argN>
 
@@ -60,14 +65,7 @@ public class JsonAsParameterExample {
             String function = "consultarLocalizacion";
             String nombre = "Pepe";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
@@ -104,14 +102,7 @@ public class JsonAsParameterExample {
             String key = "trabajo";
             String value = "programador";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
@@ -147,14 +138,7 @@ public class JsonAsParameterExample {
             String function = "eliminarElemento";
             String key = "telefono";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
@@ -190,18 +174,82 @@ public class JsonAsParameterExample {
             String function = "eliminarElemento";
             String key = "notAKey";
 
-            // JSON de ejemplo como cadena
-            JSONObject jsonObject = new JSONObject();
-
-            jsonObject.put("\"nombre\"", "\"Pepe\"");
-            jsonObject.put("\"edad\"", 24);
-            jsonObject.put("\"localizacion\"", "\"Madrid\"");
-            jsonObject.put("\"telefono\"", "\"234-567-890\"");
-            String jsonParameter = jsonObject.toString();
+            String jsonParameter = generarJson();
 
             // Construir el comando para ejecutar el script Python con el parámetro JSON
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
                     pythonScript, function, jsonParameter, key); //python <file_name> <arg1> ... <argN>
+
+            // Ejecutar el comando y obtener el proceso resultante
+            Process process = processBuilder.start();
+
+            // Leer la salida del proceso (puede ser opcional dependiendo de tu caso de uso)
+            // Aquí se imprime la salida del script Python en la consola de Java
+            java.io.BufferedReader reader = new java.io.BufferedReader(
+                    new java.io.InputStreamReader(process.getInputStream()));
+            
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            // Esperar a que el proceso termine
+            int exitCode = process.waitFor();
+            System.out.println("Proceso finalizado con código de salida: " + exitCode);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public static void example5(){
+        try{
+            // Ruta al ejecutable de Python y el script Python
+            Rutas rutas = new Rutas();
+            String pythonExecutable = "python";
+            String pythonScript = rutas.jsonAsParameterExample;
+            String function = "encontrarValor";
+            String key = "nombre";
+
+            String jsonParameter = generarJson();
+            
+            // Construir el comando para ejecutar el script Python con el parámetro JSON
+            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
+                    pythonScript, function, jsonParameter, key); //python <file_name> <arg1> ... <argN>
+
+            // Ejecutar el comando y obtener el proceso resultante
+            Process process = processBuilder.start();
+
+            // Leer la salida del proceso (puede ser opcional dependiendo de tu caso de uso)
+            // Aquí se imprime la salida del script Python en la consola de Java
+            java.io.BufferedReader reader = new java.io.BufferedReader(
+                    new java.io.InputStreamReader(process.getInputStream()));
+            
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            // Esperar a que el proceso termine
+            int exitCode = process.waitFor();
+            System.out.println("Proceso finalizado con código de salida: " + exitCode);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public static void example6(){
+        try{
+            // Ruta al ejecutable de Python y el script Python
+            Rutas rutas = new Rutas();
+            String pythonExecutable = "python";
+            String pythonScript = rutas.jsonAsParameterExample;
+            String function = "parseJsonToCsv";
+
+            String jsonParameter = generarJson();
+            
+            // Construir el comando para ejecutar el script Python con el parámetro JSON
+            ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, 
+                    pythonScript, function, jsonParameter); //python <file_name> <arg1> ... <argN>
 
             // Ejecutar el comando y obtener el proceso resultante
             Process process = processBuilder.start();
@@ -237,6 +285,10 @@ public class JsonAsParameterExample {
         example4();
         System.out.println("-----------------------------------------------");
         example4KeyNotFound();
+        System.out.println("-----------------------------------------------");
+        example5();
+        System.out.println("-----------------------------------------------");
+        example6();
         System.out.println("-----------------------------------------------");
     }
 }
