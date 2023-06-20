@@ -65,7 +65,7 @@ public class JavaPythonIntegrationJson {
             if (sb.charAt(sb.length() - 1) == ',') {
                 sb.deleteCharAt(sb.length() - 1);
             }
-    
+            
             // Close the JSON object
             sb.append("}");
     
