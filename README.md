@@ -1,4 +1,4 @@
-# **japy project**
+# **JaPy project**
 
 ## Repository description
 
