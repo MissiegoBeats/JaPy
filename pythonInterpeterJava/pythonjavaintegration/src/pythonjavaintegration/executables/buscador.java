@@ -1,15 +1,19 @@
 package pythonjavaintegration.executables;
 
+//Imports
 import pythonjavaintegration.classes.BuscadorJsonEmpresas;
 
 /**
- * buscador
+ * ES: clase que contiene ejemplos ejecutables de la clase BuscadorJsonEmpresas
+ * EN: class that contains executable examples of the class BuscadorJsonEmpresas
  * @author Andrés Missiego
  */
+ //TODO: cambiar nombre de la clase a Buscador
 public class buscador {
-
     /**
-     * @param args the command line arguments
+     * ES: Funcion main
+     * EN: Main function
+     * @param args String [] the command line arguments
      */
     public static void main(String[] args) {
         String idjava = "(JAVA)    "; //Java identifier
@@ -22,5 +26,5 @@ public class buscador {
         System.out.println(idjava+"Modificando direccion de Global Solutions a Madrid");
         b.modificarDireccion("Global Solutions","Madrid");
         System.out.println(idjava+"Direccion modificada, consulta el json"); //src/pythonjavaintegration/json/empresas.json 
-    }
-}
+    }//End main
+}//End buscador

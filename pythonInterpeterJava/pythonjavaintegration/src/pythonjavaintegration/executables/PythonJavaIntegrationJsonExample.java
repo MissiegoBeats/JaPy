@@ -1,5 +1,6 @@
 package pythonjavaintegration.executables;
 
+//Imports
 import java.io.FileReader;
 import org.python.util.PythonInterpreter;
 import org.python.core.*;
@@ -8,15 +9,20 @@ import org.json.simple.parser.JSONParser;
 import pythonjavaintegration.classes.Rutas;
 
 /**
- * Example with json
+ * ES: Ejemplo con Json
+ * EN: Example with Json
  * @author Andrés Missiego
  */
 public class PythonJavaIntegrationJsonExample {
 
     /**
-     * @param args the command line arguments
+     * ES: Método main
+     * EN: main method
+     * @param args String[] the command line arguments
      */
     public static void main(String[] args) {
+        //ES: Para este ejemplo utilizaremos jython
+        //EN: For this example we will use jython
         PythonInterpreter interpreter = new PythonInterpreter();
         Rutas rutas = new Rutas(); 
         interpreter.execfile(rutas.jsonprocessing);
@@ -31,7 +37,8 @@ public class PythonJavaIntegrationJsonExample {
         
         interpreter.close();
         
-        //Para el ejemplo de paso como parámetro, lo voy a leer del archivo inputData.json
+        //ES: Para el ejemplo de paso como parámetro, lo voy a leer del archivo inputData.json
+        //EN: For the example of passing a parameter, I will read it from the file inputData.json
         PythonInterpreter pyInterpreter = new PythonInterpreter();
         pyInterpreter.execfile(rutas.jsonprocessing);
         

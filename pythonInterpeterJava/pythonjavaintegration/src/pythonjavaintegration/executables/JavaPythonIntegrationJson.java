@@ -1,16 +1,24 @@
 package pythonjavaintegration.executables;
 
+//Imports
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import pythonjavaintegration.classes.Rutas;
 
+/**
+ * ES: Ejemplos de integración de Python con Java usando JSON
+ * EN: Examples of Python integration with Java using JSON
+ */
+
+//TODO: Still not working
 public class JavaPythonIntegrationJson {
 
     /**
-     * Método principal
-     * @param args
+     * ES: Método principal
+     * EN: Main method
+     * @param args String[] command line arguments
      */
     public static void main(String[] args) {
         try {
@@ -78,5 +86,5 @@ public class JavaPythonIntegrationJson {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    } //Fin método main
-} //Fin clase JavaPythonIntegration
+    } //End main
+} //End JavaPythonIntegration

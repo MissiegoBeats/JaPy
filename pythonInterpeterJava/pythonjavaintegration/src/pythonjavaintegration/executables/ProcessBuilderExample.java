@@ -1,5 +1,6 @@
 package pythonjavaintegration.executables;
 
+//Imports
 import java.io.IOException;
 import pythonjavaintegration.classes.Rutas;
 
@@ -10,28 +11,35 @@ import pythonjavaintegration.classes.Rutas;
 public class ProcessBuilderExample {
 
     /**
-     * @param args the command line arguments
+     * ES: Método main
+     * EN: Main method
+     * @param args String[] the command line arguments
      */
     
-    //NOTA: FUNCIONAN LAS LIBRERÍAS EXTERNAS!!!
+    //ES: de esta manera funcionan las librerias externas (a diferencia que haciendo uso de jython)
+    //EN: this is how external libraries work (unlike using jython)
     public static void main(String[] args) {
         try {
-            // Ruta al ejecutable de Python y el script Python
+            //ES: Ruta al ejecutable de Python y los parámetros del script Python
+            //EN: Path to the Python executable and the Python script parameters
             Rutas rutas = new Rutas();
             String pythonExecutable = "python";
             String pythonScript = rutas.useoflibs;
 
-            // JSON de ejemplo como cadena
+            //ES: JSON de ejemplo como cadena
+            //EN: Example JSON as a string
             String jsonParameter = "{\"key\": \"value\"}";
 
-            // Construir el comando para ejecutar el script Python con el parámetro JSON
+            //ES: Construir el comando para ejecutar el script Python con el parámetro JSON
+            //EN: Build the command to execute the Python script with the JSON parameter
             ProcessBuilder processBuilder = new ProcessBuilder(pythonExecutable, pythonScript, jsonParameter); //python <file_name> <arg1> ... <argN>
 
-            // Ejecutar el comando y obtener el proceso resultante
+            //ES: Ejecutar el comando y obtener el proceso resultante
+            //EN: Execute the command and get the resulting process
             Process process = processBuilder.start();
 
-            // Leer la salida del proceso (puede ser opcional dependiendo de tu caso de uso)
-            // Aquí se imprime la salida del script Python en la consola de Java
+            //ES: Leer la salida del proceso (puede ser opcional dependiendo de tu caso de uso). Aquí se imprime la salida del script Python en la consola de Java
+            //EN: Read the process output (this may be optional depending on your use case). Here the Python script output is printed in the Java console
             java.io.BufferedReader reader = new java.io.BufferedReader(
                     new java.io.InputStreamReader(process.getInputStream()));
             
@@ -40,12 +48,13 @@ public class ProcessBuilderExample {
                 System.out.println(line);
             }
 
-            // Esperar a que el proceso termine
+            //ES: Esperar a que el proceso termine
+            //EN: Wait for the process to finish
             int exitCode = process.waitFor();
             System.out.println("Proceso finalizado con código de salida: " + exitCode);
 
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-    }
-}
+    }//End main 
+}//End ProcessBuilderExample
