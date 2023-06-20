@@ -1,4 +1,4 @@
-# **python-java-calls**
+# **japy project**
 
 ## Repository description
 
