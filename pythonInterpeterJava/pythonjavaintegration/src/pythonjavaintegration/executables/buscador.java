@@ -8,8 +8,8 @@ import pythonjavaintegration.classes.BuscadorJsonEmpresas;
  * EN: class that contains executable examples of the class BuscadorJsonEmpresas
  * @author Andrés Missiego
  */
- //TODO: cambiar nombre de la clase a Buscador
-public class buscador {
+
+public class Buscador {
     /**
      * ES: Funcion main
      * EN: Main function
@@ -27,4 +27,4 @@ public class buscador {
         b.modificarDireccion("Global Solutions","Madrid");
         System.out.println(idjava+"Direccion modificada, consulta el json"); //src/pythonjavaintegration/json/empresas.json 
     }//End main
-}//End buscador
+}//End Buscador
