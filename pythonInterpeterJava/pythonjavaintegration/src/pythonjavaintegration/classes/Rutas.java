@@ -11,7 +11,6 @@ public class Rutas {
     public final String main = "./src/pythonjavaintegration/pythoncodes/main.py";
     public final String jsonprocessing = "./src/pythonjavaintegration/pythoncodes/jsonprocessing.py";
     public final String buscadorEmpresas = "./src/pythonjavaintegration/pythoncodes/buscadorEmpresas.py";
-    public final String mainJson = "./src/pythonjavaintegration/pythoncodes/mainJson.py";
     public final String jsonAsParameterExample = "./src/pythonjavaintegration/pythoncodes/jsonAsParameterExample.py";
     //Json paths
     public final String backupjson = "./src/pythonjavaintegration/json/backupjson.json";
