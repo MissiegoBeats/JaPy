@@ -1,113 +1,197 @@
+#ES: Importar librerias
+#EN: Import libraries
 import sys
 import json
 import io 
 import csv
 
 """
-Los argumentos de entrada del script son los siguientes: 
-    0. Nombre del script
-    1. Nombre de la función a llamar
-    2. Archivo json
-    3-N. Otros argumentos
+ES:
+    Los argumentos de entrada del script son los siguientes: 
+        0. Nombre del script
+        1. Nombre de la función a llamar
+        2. Archivo json
+        3-N. Otros argumentos
+    Nota: los print en cada método son para que java pueda obtener los valores de retorno
+EN:
+    The input arguments of the script are the following:
+        0. Script name
+        1. Function name to call
+        2. Json file
+        3-N. Other arguments
+    Note: the prints in each method are for java to get the return values
 """
 
 def cambiarTelefono():
     """
-    Argumentos de entrada (sys.argv[i]): 
-        0. Nombre del script
-        1. Nombre de la función a llamar
-        2. json
-        3. Teléfono
+    ES: Modificar el teléfon
+        Argumentos de entrada (sys.argv[i]): 
+            0. Nombre del script
+            1. Nombre de la función a llamar
+            2. json
+            3. Teléfono
+        Salida: json modificado
+    EN: Modify the phone
+        Input arguments (sys.argv[i]):
+            0. Script name
+            1. Function name to call
+            2. json
+            3. Phone
+        Output: modified json
     """
     jsonString = sys.argv[2]
-    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
-    datos_diccionario["telefono"] = str(sys.argv[3]) #Modificamos el teléfono
-    modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
+    datos_diccionario = json.loads(jsonString) #Load the json as a dictionary
+
+    datos_diccionario["telefono"] = str(sys.argv[3]) #Modify the phone
+
+    modificado = json.dumps(datos_diccionario) #Convert the dictionary to json
+
     """outputFile = open("outputData.json", "w") #Abrimos el archivo de salida
     outputFile.write(modificado) #Escribimos el json modificado
     outputFile.close() #Cerramos el archivo de salida"""
+
     print("Modificado: ")
-    print(modificado) #Imprimimos el json modificado
+    print(modificado) #Print the modified json
 
 def consultarLocalizacion():
     """
-    Argumentos de entrada (sys.argv[i]): 
-        0. Nombre del script
-        1. Nombre de la función a llamar
-        2. json
-        3. Nombre
+    ES: consultar la localizacion
+        Argumentos de entrada (sys.argv[i]): 
+            0. Nombre del script
+            1. Nombre de la función a llamar
+            2. json
+            3. Nombre
+        Salida: localizacion
+    EN: consult the location
+        Input arguments (sys.argv[i]):
+            0. Script name
+            1. Function name to call
+            2. json
+            3. Name
+        Output: location
     """
     jsonString = sys.argv[2]
-    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
-    nombre = str(sys.argv[3]) #Obtenemos el nombre
-    localizacion = datos_diccionario["localizacion"] #Obtenemos la localización
-    print("Localización de " + nombre + ": " + localizacion) #Imprimimos la localización
+    datos_diccionario = json.loads(jsonString) #Load the json as a dictionary
+
+    nombre = str(sys.argv[3]) #Get the name
+
+    localizacion = datos_diccionario["localizacion"] #Get the location
+
+    print("Localización de " + nombre + ": " + localizacion) #Print the location
 
 def agnadirElemento():
     """
-    Argumentos de entrada (sys.argv[i]):
-        0. Nombre del script
-        1. Nombre de la función a llamar
-        2. json
-        3. Key
-        4. Value
+    ES: Añadir un elemento
+        Argumentos de entrada (sys.argv[i]):
+            0. Nombre del script
+            1. Nombre de la función a llamar
+            2. json
+            3. Key
+            4. Value
+        Salida: json modificado
+    EN: Add an element
+        Input arguments (sys.argv[i]):
+            0. Script name
+            1. Function name to call
+            2. json
+            3. Key
+            4. Value
+        Output: modified json
     """
     jsonString = sys.argv[2]
-    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
-    key = str(sys.argv[3]) #Obtenemos la key
-    value = str(sys.argv[4]) #Obtenemos el value
-    datos_diccionario[key] = value #Añadimos el elemento
-    modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
+    key = str(sys.argv[3]) #Get the key
+    value = str(sys.argv[4]) #Get the value
+    datos_diccionario = json.loads(jsonString) #Load the json as a dictionary
+    
+    try:
+        datos_diccionario[key] = value #Add the element
+    except:
+        print("No se pudo añadir el elemento con la key " + key + " y el valor " + value)
+        return
+
+    modificado = json.dumps(datos_diccionario) #Convert the dictionary to json
+
     print("Elemento añadido: ")
-    print(modificado) #Imprimimos el json modificado
+    print(modificado) #Print the modified json
 
 def eliminarElemento():
     """
-    Argumentos de entrada (sys.argv[i]):
-        0. Nombre del script
-        1. Nombre de la función a llamar
-        2. json
-        3. Key
+    ES: Eliminar un elemento
+        Argumentos de entrada (sys.argv[i]):
+            0. Nombre del script
+            1. Nombre de la función a llamar
+            2. json
+            3. Key
+        Salida: json modificado
+    EN: Delete an element
+        Input arguments (sys.argv[i]):
+            0. Script name
+            1. Function name to call
+            2. json
+            3. Key
+        Output: modified json
     """
     jsonString = sys.argv[2]
-    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
-    key = str(sys.argv[3]) #Obtenemos la key
+    datos_diccionario = json.loads(jsonString) #Load the json as a dictionary
+    key = str(sys.argv[3]) #Get the key
+
     try:
-        del datos_diccionario[key] #Eliminamos el elemento
+        del datos_diccionario[key] #Delete the element
     except KeyError:
         print("No existe el elemento con la key " + key)
         return
-    modificado = json.dumps(datos_diccionario) #Convertimos el diccionario a json
+    
+    modificado = json.dumps(datos_diccionario) #Convert the dictionary to json
+
     print("Elemento eliminado: ")
-    print(modificado) #Imprimimos el json modificado
+    print(modificado) #Print the modified json
 
 def encontrarValor():
     """
-    Argumentos de entrada (sys.argv[i]):
-        0. Nombre del script
-        1. Nombre de la función a llamar
-        2. json
-        3. Key
+    ES: Encontrar el valor de un elemento
+        Argumentos de entrada (sys.argv[i]):
+            0. Nombre del script
+            1. Nombre de la función a llamar
+            2. json
+            3. Key
+        Salida: valor
+    EN: Find the value of an element
+        Input arguments (sys.argv[i]):
+            0. Script name
+            1. Function name to call
+            2. json
+            3. Key
+        Output: value
     """
     jsonString = sys.argv[2]
-    datos_diccionario = json.loads(jsonString) #Cargamos el json como diccionario
-    key = str(sys.argv[3]) #Obtenemos la key
+    datos_diccionario = json.loads(jsonString) #Load the json as a dictionary
+    key = str(sys.argv[3]) #Get the key
+
     try:
-        value = datos_diccionario[key] #Obtenemos el valor
+        value = datos_diccionario[key] #Get the value
     except KeyError:
         print("No existe el elemento con la key " + key)
         return
-    print("Valor: " + value) #Imprimimos el valor
+    
+    print("Valor: " + value) #Print the value
 
 def parseJsonToCsv():
     """
-    Argumentos de entrada (sys.argv[i]):
-        0. Nombre del script
-        1. Nombre de la función a llamar
-        2. json
+    ES: Convertir un JSON a CSV
+        Argumentos de entrada (sys.argv[i]):
+            0. Nombre del script
+            1. Nombre de la función a llamar
+            2. json
+        Salida: csv
+    EN: Convert a JSON to CSV
+        Input arguments (sys.argv[i]):
+            0. Script name
+            1. Function name to call
+            2. json
+        Output: csv
     """
     jsonString = sys.argv[2]
-    # Convertir el JSON string a un objeto JSON
+    # Convert the JSON string to a dictionarys
     json_data = json.loads(jsonString)
     # Create a StringIO object to store the CSV data
     csv_output = io.StringIO()
@@ -124,11 +208,20 @@ def parseJsonToCsv():
 
 def writeJsonToFile():
     """
-    Argumentos de entrada (sys.argv[i]):
-        0. Nombre del script
-        1. Nombre de la función a llamar
-        2. json
-        3. Nombre del archivo de salida
+    ES: Escribir un JSON en un archivo
+        Argumentos de entrada (sys.argv[i]):
+            0. Nombre del script
+            1. Nombre de la función a llamar
+            2. json
+            3. Nombre del archivo de salida
+        Salida: None
+    EN: Write a JSON to a file
+        Input arguments (sys.argv[i]):
+            0. Script name
+            1. Function name to call
+            2. json
+            3. Output file name
+        Output: None
     """
     jsonString = sys.argv[2]
     ruta = "./src/pythonjavaintegration/json/"
@@ -137,6 +230,8 @@ def writeJsonToFile():
     outputFile.close() #Cerramos el archivo de salida
     print("Json escrito en el archivo " + sys.argv[3])
 
+#ES: Método main
+#EN: Main method
 def main():
     print("Argumentos: "+str(sys.argv))
     if len(sys.argv) < 2:
@@ -161,5 +256,6 @@ def main():
         print("Función desconocida: " + function_name + ".")
 
 if __name__ == '__main__':
-    #No se ejecuta si es un modulo importado
+    #ES: No se ejecuta si es un modulo importado
+    #EN: It is not executed if it is an imported module
     main()

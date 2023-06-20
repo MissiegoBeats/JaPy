@@ -1,5 +1,6 @@
 package pythonjavaintegration.executables;
 
+//Imports
 import java.io.StringWriter;
 import org.python.core.*;
 import org.python.util.PythonInterpreter;
@@ -12,7 +13,9 @@ import pythonjavaintegration.classes.Rutas;
 public class Pythonjavaintegration {
 
     /**
-     * @param args the command line arguments
+     * ES: Método main
+     * EN: main method
+     * @param args String[] the command line arguments
      */
     public static void main(String[] args) {
         Rutas rutas = new Rutas(); 
@@ -35,14 +38,16 @@ public class Pythonjavaintegration {
         
         StringWriter output = new StringWriter();
         interpreter.setOut(output);
-        interpreter.execfile(rutas.main); //nota: se puede usar el interpreter.get() para obtener el valor de una variable
+        //ES: nota -> se puede usar el interpreter.get() para obtener el valor de una variable
+        //EN: note -> you can use interpreter.get() to get the value of a variable
+        interpreter.execfile(rutas.main);
         String pyOutput = output.toString();
         System.out.println("res del archivo: "+pyOutput);
         
         output.flush();
         output.getBuffer().setLength(0);
         
-        PyObject res = interpreter.eval("saludar()"); //devuelve null ya que no devuelve nada y el output está en la var "output"
+        PyObject res = interpreter.eval("saludar()"); //null because the function doesn't return anything
         System.out.print("output pantalla: "+output);
         Object javaObj = res.__tojava__(Object.class);
         System.out.println("res de la funcion: "+javaObj+"\n");
@@ -52,5 +57,5 @@ public class Pythonjavaintegration {
         PyObject suma = interpreter.eval("suma("+a+","+b+")");
         Object sumaJava = suma.__tojava__(Object.class);
         System.out.println("suma: "+sumaJava);
-    }
-}
+    }//End main
+}//End Pythonjavaintegration

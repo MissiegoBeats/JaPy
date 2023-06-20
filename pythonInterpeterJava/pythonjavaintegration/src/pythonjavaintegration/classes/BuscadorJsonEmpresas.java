@@ -1,7 +1,6 @@
 package pythonjavaintegration.classes;
 
-
-
+//Imports
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -14,9 +13,11 @@ import org.python.util.PythonInterpreter;
 
 /**
  * BuscadorJsonEmpresas
- * @author missi
+ * @author Andrés Missiego
  */
 public class BuscadorJsonEmpresas {
+    //ES: Atributos de la clase
+    //EN: Class attributes
     private Rutas rutas = new Rutas(); 
     private JSONObject jsonObject = null;
     private PyString jsonString;
@@ -24,7 +25,8 @@ public class BuscadorJsonEmpresas {
     private String rutaPy = this.rutas.buscadorEmpresas;
     private PythonInterpreter interpreter = new PythonInterpreter();
     
-    //Constructor de la clase
+    //ES: Constructor de la clase
+    //EN: Class builder
     public BuscadorJsonEmpresas(){
         try{
             JSONParser parser = new JSONParser();
@@ -35,11 +37,12 @@ public class BuscadorJsonEmpresas {
         }catch(Exception e){
             e.printStackTrace();
         }
-    }
+    }//End constructor
     
     /**
-     * 
-     * @param newJson 
+     * ES: Clase para actualizar el archivo JSON de la clase
+     * EN: Class to update the JSON file of the class
+     * @param newJson String uptaded JSON
      */
     private void actualizarJson(String newJson){
         PyObject j = this.interpreter.eval("formatear_json('"+newJson+"')");
@@ -54,13 +57,14 @@ public class BuscadorJsonEmpresas {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }//End actualizarJson
     
     /**
-     * 
-     * @param nombreEmpresa
-     * @param nombreUsuario
-     * @return 
+     * ES: método para obtener el correo dado el nombre de la empresa y el usuario
+     * EN: method to get the email given the name of the company and the user name
+     * @param nombreEmpresa String name of the company
+     * @param nombreUsuario String user name
+     * @return String email of the user
      */
     public String obtenerCorreo(String nombreEmpresa, String nombreUsuario){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
@@ -70,12 +74,13 @@ public class BuscadorJsonEmpresas {
         Object correo = res.__tojava__(Object.class);
         
         return correo.toString();
-    }
+    }//End obtenerCorreo
     
     /**
-     * 
-     * @param nombreEmpresa
-     * @return 
+     * ES: método para obtener el número de teléfono dado el nombre de la empresa
+     * EN: method to get the phone number given the name of the company
+     * @param nombreEmpresa String name of the company
+     * @return String phone number of the company
      */
     public String obtenerTelefono(String nombreEmpresa){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
@@ -84,12 +89,13 @@ public class BuscadorJsonEmpresas {
         Object telef = res.__tojava__(Object.class);
         
         return telef.toString();
-    }
+    }//End obtenerTelefono
     
     /**
-     * 
-     * @param nombreEmpresa
-     * @return 
+     * ES: método para obtener la dirección dado el nombre de la empresa
+     * EN: method to get the address given the name of the company
+     * @param nombreEmpresa String name of the company
+     * @return String address of the company
      */
     public String obtenerDireccion(String nombreEmpresa){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
@@ -98,12 +104,13 @@ public class BuscadorJsonEmpresas {
         Object dir = res.__tojava__(Object.class);
         
         return dir.toString();
-    }
+    }//End obtenerDireccion
     
     /**
-     * 
-     * @param nombreEmpresa
-     * @param nuevaDireccion 
+     * ES: método para modificar la dirección de la empresa
+     * EN: method to modify the address of the company
+     * @param nombreEmpresa String company name
+     * @param nuevaDireccion String new address
      */
     public void modificarDireccion(String nombreEmpresa, String nuevaDireccion){
         PyString empresa = new PyString("'"+nombreEmpresa+"'");
@@ -113,5 +120,5 @@ public class BuscadorJsonEmpresas {
         String jsonmod = (String)res.__tojava__(Object.class);
         
         actualizarJson(jsonmod);
-    }
-}
+    }//End modificarDireccion
+}//End class
