@@ -1,0 +1,49 @@
+DEBUG:root: This message should go to the log file
+INFO:root: So should this
+WARNING:root: And this, too
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): w3schools.com:443
+DEBUG:urllib3.connectionpool:https://w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 301 134
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.w3schools.com:443
+DEBUG:urllib3.connectionpool:https://www.w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 200 99
+DEBUG:root: This message should go to the log file
+INFO:root: So should this
+WARNING:root: And this, too
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): w3schools.com:443
+DEBUG:urllib3.connectionpool:https://w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 301 134
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.w3schools.com:443
+DEBUG:urllib3.connectionpool:https://www.w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 200 99
+DEBUG:root: This message should go to the log file
+INFO:root: So should this
+WARNING:root: And this, too
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): w3schools.com:443
+DEBUG:urllib3.connectionpool:https://w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 301 134
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.w3schools.com:443
+DEBUG:urllib3.connectionpool:https://www.w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 200 99
+DEBUG:root: This message should go to the log file
+INFO:root: So should this
+WARNING:root: And this, too
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): w3schools.com:443
+DEBUG:urllib3.connectionpool:https://w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 301 134
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.w3schools.com:443
+DEBUG:urllib3.connectionpool:https://www.w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 200 99
+DEBUG:root: This message should go to the log file
+INFO:root: So should this
+WARNING:root: And this, too
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): w3schools.com:443
+DEBUG:urllib3.connectionpool:https://w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 301 134
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.w3schools.com:443
+DEBUG:urllib3.connectionpool:https://www.w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 200 99
+DEBUG:root: This message should go to the log file
+INFO:root: So should this
+WARNING:root: And this, too
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): w3schools.com:443
+DEBUG:urllib3.connectionpool:https://w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 301 134
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.w3schools.com:443
+DEBUG:urllib3.connectionpool:https://www.w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 200 99
+DEBUG:root: This message should go to the log file
+INFO:root: So should this
+WARNING:root: And this, too
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): w3schools.com:443
+DEBUG:urllib3.connectionpool:https://w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 301 134
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): www.w3schools.com:443
+DEBUG:urllib3.connectionpool:https://www.w3schools.com:443 "GET /python/demopage.htm HTTP/1.1" 200 99

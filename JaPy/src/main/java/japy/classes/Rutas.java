@@ -7,10 +7,10 @@ package japy.classes;
  */
 public class Rutas {
     //Python paths
-    public final String useoflibs = "./src/japy/pythoncodes/useoflibs.py";
-    public final String jsonAsParameterExample = "./src/japy/pythoncodes/jsonAsParameterExample.py";
-    public final String jsonFileProcessing = "./src/japy/pythoncodes/jsonFileProcessing.py";
+    public final String useoflibs = "./src/main/java/japy/pythoncodes/useoflibs.py";
+    public final String jsonAsParameterExample = "./src/main/java/japy/pythoncodes/jsonAsParameterExample.py";
+    public final String jsonFileProcessing = "./src/main/java/japy/pythoncodes/jsonFileProcessing.py";
     //Json paths
-    public final String inputData = "./src/japy/json/inputData.json";
-    public final String outputData = "./src/japy/json/outputData.json";
+    public final String inputData = "./src/main/java/japy/json/inputData.json";
+    public final String outputData = "./src/main/java/japy/json/outputData.json";
 }//End Rutas

@@ -11,7 +11,7 @@ import getopt
 import json
 import math
 import requests
-import sockets
+import socket
 import datetime
 import jsonify
 
@@ -42,7 +42,7 @@ def useoflogging():
     EN: Example of use of logging library
     """
     print("Use of logging")
-    logging.basicConfig(filename='./src/pythonjavaintegration/pythoncodes/example.log',level=logging.DEBUG)
+    logging.basicConfig(filename='./src/main/java/japy/json/example.log',level=logging.DEBUG)
     logging.debug(' This message should go to the log file')
     logging.info(' So should this')
     logging.warning(' And this, too')
@@ -105,7 +105,10 @@ def useofsockets():
     EN: Example of use of sockets library 
     """
     print("Use of sockets")
-    print("Socket: "+str(sockets.gethostname()))
+    try:
+        print("Socket: "+str(socket.gethostbyname('www.google.com')))
+    except Exception as e:
+        print("Exception: "+str(e))
 
 def useofdatetime():
     """
@@ -124,12 +127,8 @@ def useofjsonify():
     EN: Example of use of jsonify library 
     """
     print("Use of jsonify")
-    x = {
-        "name": "John",
-        "age": 30,
-        "city": "New York"
-    }
-    print(jsonify.dumps(x))
+    #As we have imported jsonify without any problem, we can use it. 
+    #Not implemented since I don't know how to use it still (i'll get back to it later)
 
 def useofpymysql():
     """
@@ -137,12 +136,14 @@ def useofpymysql():
     EN: Example of use of pymysql library 
     """
     print("Use of pymysql")
-    db = pymysql.connect("localhost","root","root","test")
+    """db = pymysql.connect("localhost","root","root","test")
     cursor = db.cursor()
     cursor.execute("SELECT VERSION()")
     data = cursor.fetchone()
     print("Database version : %s " % data)
-    db.close()
+    db.close()"""
+    #As we have imported pymysql without any problem, we can use it.
+    #Not implemented since I don't know how to use it still (i'll get back to it later)
 
 def main():
     """

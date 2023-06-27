@@ -22,6 +22,25 @@ EN:
     Note: the prints in each method are for java to get the return values
 """
 
+def formatJson(jsonString) -> str:
+    """
+    ES: Formatear el json
+        Argumentos de entrada: 
+            jsonString: json en formato string
+        Salida: json formateado como string
+    EN: Format the json
+        Input arguments: 
+            jsonString: json in string format
+        Output: formatted json as string
+    """
+    try:
+        jsonDict = json.loads(jsonString) #Convert the json to a dictionary
+        jsonString = json.dumps(jsonDict, indent=4, sort_keys=True) #Convert the dictionary to a json
+        return jsonString
+    except Exception as e:
+        print("Error: " + str(e))
+        return jsonString
+
 def cambiarTelefono():
     """
     ES: Modificar el teléfon
@@ -224,9 +243,9 @@ def writeJsonToFile():
         Output: None
     """
     jsonString = sys.argv[2]
-    ruta = "./src/pythonjavaintegration/json/"
+    ruta = "./src/main/java/japy/json/"
     outputFile = open(ruta+sys.argv[3], "w") #Abrimos el archivo de salida
-    outputFile.write(jsonString) #Escribimos el json
+    outputFile.write(formatJson(jsonString)) #Escribimos el json
     outputFile.close() #Cerramos el archivo de salida
     print("Json escrito en el archivo " + sys.argv[3])
 
