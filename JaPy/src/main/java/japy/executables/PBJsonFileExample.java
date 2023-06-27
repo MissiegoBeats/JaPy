@@ -23,12 +23,14 @@ public class PBJsonFileExample
            Rutas rutas = new Rutas();
            String pythonExecutable = "python";
            String pythonScript = rutas.jsonFileProcessing;
-           String function = " procesarJsonDefault";
+           String function = "procesarJsonDefault";
+           
+           System.out.println(System.getProperty("user.dir"));
 
            //ES: JSON de ejemplo como cadena
            //EN: Example JSON as a string
-           String jsonFileRoute = " "+rutas.inputData;
-           String jsonOutputRoute = " "+rutas.outputData;
+           String jsonFileRoute = rutas.inputData;
+           String jsonOutputRoute = rutas.outputData;
 
            //ES: Construir el comando para ejecutar el script Python con el parámetro JSON
            //EN: Build the command to execute the Python script with the JSON parameter

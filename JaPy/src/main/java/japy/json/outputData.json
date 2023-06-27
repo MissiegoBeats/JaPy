@@ -1,15 +1,16 @@
 {
     "cliente": {
-        "nombre": "Jane Doe", 
-        "correo": "janedoe@email.com", 
-        "telefono": "456-456-456"
-    }, 
-    "precio": 15.67, 
+        "correo": "janedoe@email.com",
+        "nombre": "Jane Doe",
+        "telefono": "455-344-234"
+    },
+    "precio": 15.67,
+    "tamano": "mediana",
+    "telefono": "123-456-789",
     "toppings": [
-        "champinones", 
-        "queso extra", 
-        "pepperoni", 
+        "champinones",
+        "queso extra",
+        "pepperoni",
         "albahaca"
-    ], 
-    "tamano": "mediana"
+    ]
 }
