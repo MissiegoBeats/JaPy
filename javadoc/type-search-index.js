@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"japy.executables","l":"PBargparse"},{"p":"japy.executables","l":"PBJsonExamples"},{"p":"japy.executables","l":"PBJsonFileExample"},{"p":"japy.executables","l":"PBStructureExample"},{"p":"japy.classes","l":"Rutas"}];updateSearchResults();
